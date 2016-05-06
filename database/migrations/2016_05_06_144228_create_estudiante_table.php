@@ -12,7 +12,7 @@ class CreateEstudianteTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		//hola brayan
 	}
 
 	/**
