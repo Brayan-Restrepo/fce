@@ -19,7 +19,10 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li class=''><a href="{{ url('home')}}"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
-            <li class=''><a href="{{ url('consulta/pacientes')}}"><i class='fa fa-user'></i> <span>Estudiantes</span></a></li>
+            <li class=''><a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user'></i> <span>Agregar Estudiante</span></a></li>
+            <li class=''><a href="{{ url('')}}"><i class='fa fa-user'></i> <span>Estudiantes</span></a></li>
+            <li class=''><a href="{{ url('')}}"><i class='fa fa-user'></i> <span>Docentes</span></a></li>
+            <li class=''><a href="{{ url('')}}"><i class='fa fa-user'></i> <span>Agregar Docente</span></a></li>
         
         </ul><!-- /.sidebar-menu -->
     </section>

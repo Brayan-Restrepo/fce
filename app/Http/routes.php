@@ -19,3 +19,9 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::group(['prefix'=>'gestionar','middleware'=>['auth'], 'namespace'=>'Gestionar'], function(){	
+	
+	Route::resource('estudiante','EstudiantesController');
+
+});
