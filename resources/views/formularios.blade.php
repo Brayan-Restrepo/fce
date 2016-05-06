@@ -25,7 +25,7 @@
 				
 					{!! Form::open(['route' => 'gestionar.estudiante.store', 'method'=>'POST', 'class'=>'']) !!}	
 						@include('form.form-estudiante')
-						<button type="submit" class="btn btn-lg btn-success">Registrar Sintomas</button>
+						<button type="submit" class="btn btn-lg btn-success">Registrar Estudiante</button>
 
 					{!! Form::close() !!}
 		</div>

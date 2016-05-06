@@ -1,10 +1,5 @@
 	
 
-fechaNac
-direccion
-barrio
-celular
-email
 	
 
 	<div class="box box-solid box-primary">
@@ -51,13 +46,36 @@ email
 				        {!! Form::text('segundo-apellido', null, ['class'=>'form-control', 'placeholder'=>"Segundo Apellido"]) !!}
 				    </div>
 				</div>
+				<div class='col-lg-6'>
+				    <div class="form-group">
+				        {!! Form::label('fecha-nacimiento', 'Fecha de Nacimiento', ['class'=>'']) !!}
+				        {!! Form::text('fecha-nacimiento', null, ['class'=>'form-control', 'placeholder'=>"Fecha de Nacimiento"]) !!}
+				        
+				    </div>
+				    <div class="form-group">
+				        {!! Form::label('direccion', 'Dirección', ['class'=>'']) !!}    
+				        {!! Form::text('direccion', null, ['class'=>'form-control', 'placeholder'=>"Dirección"]) !!}
+				    </div>
+				</div>
+				<div class='col-lg-6'>
+				    <div class="form-group">
+				        {!! Form::label('barrio', 'Barrio', ['class'=>'']) !!}
+				        {!! Form::text('barrio', null, ['class'=>'form-control', 'placeholder'=>"Barrio"]) !!}
+				        
+				    </div>
+				    <div class="form-group">
+				        {!! Form::label('celular', 'Celular', ['class'=>'']) !!}    
+				        {!! Form::text('celular', null, ['class'=>'form-control', 'placeholder'=>"Celular"]) !!}
+				    </div>
+				    <div class="form-group">
+				        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
+				        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
+				    </div>
+				</div>
 		    </div>
 	    	<!-- Fin Info Basica -->
 	    </div>
 	</div>
-
-
-
 
 
 
