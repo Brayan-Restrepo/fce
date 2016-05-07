@@ -15,6 +15,7 @@ class CreateEstadotrabajogradoTable extends Migration {
 		Schema::create('estadoTG', function(Blueprint $table){
 			$table -> integer('id');
 			$table -> char('estado');
+			$table->timestamps();
 		});
 	}
 

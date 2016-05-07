@@ -15,6 +15,7 @@ class CreateModalidadTable extends Migration {
 		Schema::create('modalidad', function(Blueprint $table){
 			$table -> integer('id');
 			$table -> char('descripcion');
+			$table->timestamps();
 		});
 	}
 

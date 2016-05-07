@@ -3,12 +3,12 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Estudiante;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateEstudianteRequest;
+use App\Profesor;
+use App\Http\Requests\CreateProfesorRequest;
 use Illuminate\Support\Facades\Session;
 
-class EstudiantesController extends Controller {
+class ProfesoresController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,9 +17,9 @@ class EstudiantesController extends Controller {
 	 */
 	public function index()
 	{
-		$estudiante = Estudiante::all();
-		Session::put('tabla', 'Estudiantes');
-		return view('table',compact('estudiante'));	
+		$profesores = Profesor::all();
+		Session::put('tabla', 'Profesores');
+		return view('table',compact('profesores'));	
 	}
 
 	/**
@@ -29,8 +29,7 @@ class EstudiantesController extends Controller {
 	 */
 	public function create()
 	{
-		//
-		Session::put('formulario', 'Estudiante');
+		Session::put('formulario', 'Profesor');
 		return view('formularios');
 	}
 
@@ -39,10 +38,9 @@ class EstudiantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CreateEstudianteRequest $request)
+	public function store(CreateProfesorRequest $request)
 	{
-			$estudiante = Estudiante::create($request->all());
-	        
+			$profesor = Profesor::create($request->all());
 			return redirect()->to('home');
 	}
 

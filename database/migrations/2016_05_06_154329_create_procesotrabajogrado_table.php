@@ -12,14 +12,15 @@ class CreateProcesotrabajogradoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('procesoTG', function(Blueprint $tabla){
-			$tabla -> integer('id');
-			$tabla -> char('trabajoGrado');
-			$tabla -> date('fecha');
-			$tabla -> char('actaComite');
-			$tabla -> char('estado');
-			$tabla -> char('decision');
-			$tabla -> char('actaSustentacion');
+		Schema::create('procesoTG', function(Blueprint $table){
+			$table -> integer('id');
+			$table -> char('trabajoGrado');
+			$table -> date('fecha');
+			$table -> char('actaComite');
+			$table -> char('estado');
+			$table -> char('decision');
+			$table -> char('actaSustentacion');
+			$table -> timestamps();
 		});
 	}
 

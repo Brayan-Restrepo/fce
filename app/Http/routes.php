@@ -23,5 +23,6 @@ Route::controllers([
 Route::group(['prefix'=>'gestionar','middleware'=>['auth'], 'namespace'=>'Gestionar'], function(){	
 	
 	Route::resource('estudiante','EstudiantesController');
+	Route::resource('profesor','ProfesoresController');
 
 });

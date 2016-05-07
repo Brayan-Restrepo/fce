@@ -1,7 +1,7 @@
 
 	<div class="box box-solid box-primary">
 		<div class="box-header">
-			<h3 class="box-title">Agregar Estudiante</h3>
+			<h3 class="box-title">Agregar Profesor</h3>
 			<div class="box-tools pull-right">
 				<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 			</div>
@@ -9,32 +9,34 @@
 		<div class="box-body">
 			<!-- Info Basica -->
 			<div class="row">
-
 				<div class='col-lg-6'>
-					   	<div class="form-group col-lg-6" style="padding-left: 0px;">
-					        {!! Form::label('codigo', 'Codigo', ['class'=>'']) !!}
-					        {!! Form::text('codigo', null, ['class'=>'form-control', 'placeholder'=>"Codigo"]) !!}
-					    </div>			    
-					    <div class="form-group col-lg-6" style='padding-left: 0px;'>
-					        {!! Form::label('identificacion', 'Identificacion', ['class'=>'']) !!}
-					        {!! Form::text('identificacion', null, ['class'=>'form-control', 'placeholder'=>"Identificacion"]) !!}
-					    </div>
-					    
-					    <div class="form-group col-lg-6" style="padding-left: 0px;">
-					        {!! Form::label('direccion', 'Dirección', ['class'=>'']) !!}    
-					        {!! Form::text('direccion', null, ['class'=>'form-control', 'placeholder'=>"Dirección"]) !!}
-					    </div>
-					    <div class="form-group col-lg-6" style="padding-left: 0px;">
-					        {!! Form::label('barrio', 'Barrio', ['class'=>'']) !!}
-					        {!! Form::text('barrio', null, ['class'=>'form-control', 'placeholder'=>"Barrio"]) !!}
-					        
-					    </div>
-					    <div class="form-group">
-					        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
-					        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
-					    </div>
+				   	<div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('id', 'Codigo', ['class'=>'']) !!}
+				        {!! Form::text('id', null, ['class'=>'form-control', 'placeholder'=>"Codigo"]) !!}
+				    </div>			    
+				    <div class="form-group col-lg-6" style='padding-left: 0px;'>
+				        {!! Form::label('identificacion', 'Identificacion', ['class'=>'']) !!}
+				        {!! Form::text('identificacion', null, ['class'=>'form-control', 'placeholder'=>"Identificacion"]) !!}
+				    </div>
+				    
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('pregrado', 'Pregrado', ['class'=>'']) !!}    
+				        {!! Form::text('pregrado', null, ['class'=>'form-control', 'placeholder'=>"Pregrado"]) !!}
+				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('especializacion', 'Especializacion', ['class'=>'']) !!}
+				        {!! Form::text('especializacion', null, ['class'=>'form-control', 'placeholder'=>"Especializacion"]) !!}
+				        
+				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('maestria', 'Maestria', ['class'=>'']) !!}    
+				        {!! Form::text('maestria', null, ['class'=>'form-control', 'placeholder'=>"Maestria"]) !!}
+				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('doctorado', 'Doctorado', ['class'=>'']) !!}    
+				        {!! Form::text('doctorado', null, ['class'=>'form-control', 'placeholder'=>"Doctorado"]) !!}
+				    </div>
 				</div>
-				
 				<div class='col-lg-6'>				
 					<div class="form-group col-lg-6" style="padding-left: 0px;">
 				        {!! Form::label('nombre1', 'Primer Nombre', ['class'=>'']) !!}		
@@ -58,20 +60,9 @@
 				        {!! Form::label('fechaNac', 'Fecha de Nacimiento', ['class'=>'']) !!}
 				        {!! Form::text('fechaNac', null, ['class'=>'form-control', 'placeholder'=>"Fecha de Nacimiento"]) !!}				        
 				    </div>
-				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('celular', 'Celular', ['class'=>'']) !!}    
-				        {!! Form::text('celular', null, ['class'=>'form-control', 'placeholder'=>"Celular"]) !!}
-				    </div>
 				</div>
-				
 		    </div>
 	    	<!-- Fin Info Basica -->
 	    </div>
 	</div>
 
-
- 					
-
-
-					
-				    

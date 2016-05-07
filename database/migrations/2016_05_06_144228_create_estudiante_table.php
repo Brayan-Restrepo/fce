@@ -25,6 +25,7 @@ class CreateEstudianteTable extends Migration {
 			$table -> char('barrio');
 			$table -> string('celular');
 			$table -> string('email');
+			$table->timestamps();
 		});
 	}
 

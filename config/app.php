@@ -147,6 +147,7 @@ return [
 
 		/**
 		* Form
+			"laravelcollective/html": "~5.0"
 		*/
 		Collective\Html\HtmlServiceProvider::class,
 

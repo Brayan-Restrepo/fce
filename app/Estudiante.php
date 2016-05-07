@@ -9,7 +9,7 @@ class Estudiante extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'estudiante';
+	protected $table = 'estudiantes';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -30,4 +30,16 @@ class Estudiante extends Model {
 		'email'
 		];
 
+	public function scopeName($query, $name){
+		//dd('Scope '.$name);
+		//trim($name) no toma Espacios
+		if (trim($name) != '') {
+			$query->where(\DB::raw("CONCAT(nombre1,' ',apellido1,' ',identificacion)"), "LIKE");
+			//$query->where('first_name', $name);
+			//dd($query);
+		}
+	}
+
 }
+
+	
