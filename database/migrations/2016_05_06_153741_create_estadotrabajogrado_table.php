@@ -12,8 +12,8 @@ class CreateEstadotrabajogradoTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('estadoTG', function(Blueprint $table){
-			$table -> integer('id');
+		Schema::create('estadostg', function(Blueprint $table){
+			$table -> increments('id');
 			$table -> char('estado');
 			$table->timestamps();
 		});

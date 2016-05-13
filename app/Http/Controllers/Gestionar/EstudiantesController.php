@@ -18,7 +18,7 @@ class EstudiantesController extends Controller {
 	public function index()
 	{
 		$estudiante = Estudiante::all();
-		Session::put('tabla', 'Estudiantes');
+		Session::put('menu', 'Estudiantes');
 		return view('table',compact('estudiante'));	
 	}
 
@@ -30,6 +30,7 @@ class EstudiantesController extends Controller {
 	public function create()
 	{
 		//
+		Session::put('menu', 'Agregar Estudiante');
 		Session::put('formulario', 'Estudiante');
 		return view('formularios');
 	}

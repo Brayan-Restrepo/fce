@@ -1,4 +1,11 @@
 <?php namespace App\Http\Controllers;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
+use App\Modalidades;
+use App\EstadosTG;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller {
 
@@ -33,4 +40,18 @@ class HomeController extends Controller {
 		return view('home');
 	}
 
+	public function modalidad(){
+		$modalidades = Modalidades::all();
+		Session::put('menu', 'Modalidades de grado');
+		return view('table',compact('modalidades'));
+
+		return view();
+	}
+	public function estadotg(){
+		$estadostg = EstadosTG::all();
+		Session::put('menu', 'Estados Trabajos de Gados');
+		return view('table',compact('estadostg'));
+
+		return view();
+	}
 }

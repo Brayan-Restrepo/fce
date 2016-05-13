@@ -12,8 +12,8 @@ class CreateModalidadTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('modalidad', function(Blueprint $table){
-			$table -> integer('id');
+		Schema::create('modalidades', function(Blueprint $table){
+			$table -> increments('id');
 			$table -> char('descripcion');
 			$table->timestamps();
 		});
@@ -26,7 +26,7 @@ class CreateModalidadTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('modalidad');
+		Schema::drop('modalidades');
 	}
 
 }

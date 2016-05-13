@@ -18,13 +18,41 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
-            <li class=''><a href="{{ url('home')}}"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
-            <li class=''><a href="{{ url('gestionar/estudiante')}}"><i class='fa fa-user'></i> <span>Estudiantes</span></a></li>
-            <li class=''><a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user'></i> <span>Agregar Estudiante</span></a></li>
-            
-            <li class=''><a href="{{ url('gestionar/profesor')}}"><i class='fa fa-user'></i> <span>Docentes</span></a></li>
-            <li class=''><a href="{{ url('gestionar/profesor/create')}}"><i class='fa fa-user'></i> <span>Agregar Docente</span></a></li>
-        
+            <li class=''><a href="{{ url('home')}}"><i class='fa fa-home'></i> <span>Inicio</span></a></li>  
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-graduation-cap'></i> <span>Trabajo de Grado</span></a>
+                <ul class="treeview-menu">
+                    <li class=''>
+                        <a href="{{ url('modalidad-de-grado')}}"><i class='fa fa-user'></i> <span>Modalidades</span></a>
+                    </li>            
+                    <li class=''>
+                        <a href="{{ url('estado-trabajo-de-grado')}}"><i class='fa fa-user'></i> <span>Estados</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-child'></i> <span>Estudiante</span></a>
+                <ul class="treeview-menu">
+                    <li class=''>
+                        <a href="{{ url('gestionar/estudiante')}}"><i class='fa  fa-group'></i> <span>Lista de Estudiantes</span></a>
+                    </li>
+                    <li class=''>
+                        <a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user-plus'></i> <span>Agregar Estudiante</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-user'></i> <span>Docentes</span></a>
+                <ul class="treeview-menu">
+                    <li class=''>
+                        <a href="{{ url('gestionar/profesor')}}"><i class='fa fa-group'></i> <span>Lista de Docentes</span></a>
+                    </li>
+                    <li class=''>
+                        <a href="{{ url('gestionar/profesor/create')}}"><i class='fa fa-user-plus'></i> <span>Agregar Docente</span></a>
+                    </li>
+                </ul>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

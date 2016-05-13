@@ -9,15 +9,15 @@
 		<div class="box-body">
 			<!-- Info Basica -->
 			<div class="row">
-				<div class='col-lg-6'>
-				   	<div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('id', 'Codigo', ['class'=>'']) !!}
-				        {!! Form::text('id', null, ['class'=>'form-control', 'placeholder'=>"Codigo"]) !!}
-				    </div>			    
+				<div class='col-lg-6'>	    
 				    <div class="form-group col-lg-6" style='padding-left: 0px;'>
 				        {!! Form::label('identificacion', 'Identificacion', ['class'=>'']) !!}
 				        {!! Form::text('identificacion', null, ['class'=>'form-control', 'placeholder'=>"Identificacion"]) !!}
 				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('fechaNac', 'Fecha de Nacimiento', ['class'=>'']) !!}
+				        {!! Form::text('fechaNac', null, ['class'=>'form-control', 'placeholder'=>"Fecha de Nacimiento"]) !!}        
+				    </div>	
 				    
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
 				        {!! Form::label('pregrado', 'Pregrado', ['class'=>'']) !!}    
@@ -55,10 +55,6 @@
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
 				        {!! Form::label('apellido2', 'Segundo Apellido', ['class'=>'']) !!}    
 				        {!! Form::text('apellido2', null, ['class'=>'form-control', 'placeholder'=>"Segundo Apellido"]) !!}
-				    </div>
-				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('fechaNac', 'Fecha de Nacimiento', ['class'=>'']) !!}
-				        {!! Form::text('fechaNac', null, ['class'=>'form-control', 'placeholder'=>"Fecha de Nacimiento"]) !!}				        
 				    </div>
 				</div>
 		    </div>

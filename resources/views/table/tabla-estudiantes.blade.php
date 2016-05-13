@@ -1,7 +1,7 @@
 
 <div class='box box-primary box-solid'>
 	<div class="box-header">
-		<h3 class="box-title">{{ Session::get('tabla') }}</h3>
+		<h3 class="box-title">{{ Session::get('menu') }}</h3>
 		<div class="box-tools pull-right">
 			
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>

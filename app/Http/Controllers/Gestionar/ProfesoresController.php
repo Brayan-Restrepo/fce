@@ -18,7 +18,7 @@ class ProfesoresController extends Controller {
 	public function index()
 	{
 		$profesores = Profesor::all();
-		Session::put('tabla', 'Profesores');
+		Session::put('menu', 'Profesores');
 		return view('table',compact('profesores'));	
 	}
 
@@ -29,6 +29,7 @@ class ProfesoresController extends Controller {
 	 */
 	public function create()
 	{
+		Session::put('menu', 'Agregar Profesor');
 		Session::put('formulario', 'Profesor');
 		return view('formularios');
 	}

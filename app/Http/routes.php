@@ -14,6 +14,8 @@
 //Route::get('/', 'WelcomeController@index');
 Route::get('', 'HomeController@index');
 Route::get('home', 'HomeController@index');
+Route::get('modalidad-de-grado','HomeController@modalidad');
+Route::get('estado-trabajo-de-grado','HomeController@estadotg');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

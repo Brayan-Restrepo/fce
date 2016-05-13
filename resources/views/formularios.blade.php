@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('htmlheader_title')
-    
+    {{ Session::get('menu') }}
 @endsection
 
 
