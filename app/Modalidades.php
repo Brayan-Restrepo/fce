@@ -16,8 +16,22 @@ class Modalidades extends Model {
 	 * 
 	 * @var array
 	 */
-	protected $fillable = [
-		'descripcion'
-		];
+	protected $guarded = ['id'];
+	protected $fillable = ['descripcion'];
 
+	public function trabajoDeGrado(){
+        return $this->hasMany('App\TrabajoDeGrado');
+    }
+
+	public function scopeModalidadesArray($query){
+		
+		$modalidades = Modalidades::all();
+		$modalidadesArray = array();
+
+		foreach ($modalidades as $modalidad) {
+			$modalidadesArray[$modalidad->id]=$modalidad->descripcion;
+		}
+
+		return $modalidadesArray;
+	}
 }

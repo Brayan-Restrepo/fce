@@ -26,7 +26,7 @@ class CreateEstadotrabajogradoTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('estadoTG');
+		Schema::drop('estadostg');
 	}
 
 }

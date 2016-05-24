@@ -8,7 +8,7 @@
 @section('main-content')
 <div class="container">
 	<div class="row">
-
+	
 	@if ($errors->any())
 	    <div class="alert alert-danger" role="alert">
 	        <p>Por favor corrige los errores:</p>
@@ -26,7 +26,10 @@
 						@include('form.form-estudiante')						
 				@elseif(Session::get('formulario')=='Profesor')
 					{!! Form::open(['route' => 'gestionar.profesor.store', 'method'=>'POST', 'class'=>'']) !!}	
-						@include('form.form-profesor')						
+						@include('form.form-profesor')
+				@elseif(Session::get('formulario')=='Trabajo de Grado')
+					{!! Form::open(['route' => 'gestionar.trabajo-de-grado.store', 'method'=>'POST', 'class'=>'']) !!}	
+						@include('form.form-trabajo-de-grado')						
 				@endif
 
 				<button type="submit" class="btn btn-lg btn-success">Registrar {{ Session::get('formulario') }}</button>

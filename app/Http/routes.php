@@ -26,5 +26,6 @@ Route::group(['prefix'=>'gestionar','middleware'=>['auth'], 'namespace'=>'Gestio
 	
 	Route::resource('estudiante','EstudiantesController');
 	Route::resource('profesor','ProfesoresController');
+	Route::resource('trabajo-de-grado','TrabajoDeGradoController');
 
 });

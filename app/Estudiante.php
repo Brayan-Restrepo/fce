@@ -16,6 +16,7 @@ class Estudiante extends Model {
 	 * 
 	 * @var array
 	 */
+	protected $guarded = ['id'];// los campos que no aceptan
 	protected $fillable = [
 		'codigo',
 		'identificacion',
@@ -30,14 +31,17 @@ class Estudiante extends Model {
 		'email'
 		];
 
-	public function scopeName($query, $name){
-		//dd('Scope '.$name);
-		//trim($name) no toma Espacios
-		if (trim($name) != '') {
-			$query->where(\DB::raw("CONCAT(nombre1,' ',apellido1,' ',identificacion)"), "LIKE");
-			//$query->where('first_name', $name);
-			//dd($query);
+	public function scopeEstudiantesArray($query){
+
+		$estudiantes = Estudiante::all();
+		$estudiantesArray = array();
+
+		foreach ($estudiantes as $estudiante) {
+			$nombreEstudiante = $estudiante->codigo.' - '.$estudiante->nombre1.' '.$estudiante->nombre2.' '.$estudiante->apellido1.' '.$estudiante->apellido2;
+			$estudiantesArray[$estudiante->id] = $nombreEstudiante;
 		}
+		
+		return $estudiantesArray;
 	}
 
 }

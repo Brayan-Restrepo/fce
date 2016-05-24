@@ -16,8 +16,8 @@ class Profesor extends Model {
 	 * 
 	 * @var array
 	 */
+	protected $guarded = ['id'];
 	protected $fillable = [
-		'id',
 		'identificacion',
 		'apellido1',
 		'apellido2',
@@ -30,4 +30,16 @@ class Profesor extends Model {
 		'doctorado'
 		];
 
+	public function scopeProfesoresArray($query){
+
+		$profesores = Profesor::all();
+		$profesoresArray = array();
+
+		foreach ($profesores as $profesor) {
+			$nombreProfecor = $profesor->identificacion.' - '.$profesor->nombre1.' '.$profesor->nombre2.' '.$profesor->apellido1.' '.$profesor->apellido2; 
+			$profesoresArray[$profesor->id]=$nombreProfecor;
+		}
+		
+		return $profesoresArray;
+	}
 }

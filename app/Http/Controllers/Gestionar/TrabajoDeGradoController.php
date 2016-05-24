@@ -3,12 +3,19 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Estudiante;
 use Illuminate\Http\Request;
-use App\Http\Requests\CreateEstudianteRequest;
+
+use App\TrabajoDeGrado;
+use App\EstadosTG;
+use App\Modalidades;
+use App\Profesor;
+use App\Estudiante;
+
+use App\Http\Requests\CreateTrabajoDeGradoRequest;
 use Illuminate\Support\Facades\Session;
 
-class EstudiantesController extends Controller {
+
+class TrabajoDeGradoController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,10 +24,9 @@ class EstudiantesController extends Controller {
 	 */
 	public function index()
 	{
-		$estudiante = Estudiante::all();
-		
-		Session::put('menu', 'Estudiantes');
-		return view('table',compact('estudiante'));	
+		$trabajo_de_grado = TrabajoDeGrado::all();
+		Session::put('menu', 'Lista de Trabajos de Grados');
+		return view('table',compact('trabajo_de_grado'));
 	}
 
 	/**
@@ -30,10 +36,15 @@ class EstudiantesController extends Controller {
 	 */
 	public function create()
 	{
-		//
-		Session::put('menu', 'Agregar Estudiante');
-		Session::put('formulario', 'Estudiante');
-		return view('formularios');
+		Session::put('menu', 'Nuevo Trabajo de Grado');
+		Session::put('formulario', 'Trabajo de Grado');
+
+		$profesoresArray = Profesor::profesoresArray();
+		$estudiantesArray = Estudiante::estudiantesArray();
+		$modalidadesArray = Modalidades::modalidadesArray();
+		$estadosArray = EstadosTG::estadosArray();	
+
+		return view('formularios',compact('modalidadesArray','estadosArray','profesoresArray','estudiantesArray'));
 	}
 
 	/**
@@ -41,11 +52,10 @@ class EstudiantesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CreateEstudianteRequest $request)
+	public function store(CreateTrabajoDeGradoRequest $request)
 	{
-			$estudiante = Estudiante::create($request->all());
-	        
-			return redirect()->to('home');
+		$trabajo_de_grado = TrabajoDeGrado::create($request->all());
+		return redirect()->to('home');
 	}
 
 	/**

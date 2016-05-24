@@ -14,15 +14,16 @@ class CreateEstudianteTable extends Migration {
 	{
 		//hola brayan
 		Schema::create('estudiantes',function(Blueprint $table){
-			$table -> integer('codigo');
+			$table -> increments('id');
+			$table -> integer('codigo')->unique();
 			$table -> integer('identificacion');
-			$table -> char('apellido1');
-			$table -> char('apellido2');
-			$table -> char('nombre1');
-			$table -> char('nombre2');
+			$table -> string('apellido1');
+			$table -> string('apellido2');
+			$table -> string('nombre1');
+			$table -> string('nombre2');
 			$table -> date('fechaNac');
-			$table -> char('direccion');
-			$table -> char('barrio');
+			$table -> string('direccion');
+			$table -> string('barrio');
 			$table -> string('celular');
 			$table -> string('email');
 			$table->timestamps();
@@ -37,7 +38,6 @@ class CreateEstudianteTable extends Migration {
 	public function down()
 	{
 		Schema::drop('estudiantes');
-		//
 	}
 
 }

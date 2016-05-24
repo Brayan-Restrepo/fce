@@ -16,8 +16,20 @@ class EstadosTG extends Model {
 	 * 
 	 * @var array
 	 */
-	protected $fillable = [
-		'descripcion'
-		];
+	protected $guarded = ['id'];
+	protected $fillable = ['estado'];
+
+	
+	public function scopeEstadosArray($query){
+		
+		$estados = EstadosTG::all();
+		$estadosArray = array();
+		
+		foreach ($estados as $estado) {
+			$estadosArray[$estado->id]=$estado->estado;	
+		}
+
+		return $estadosArray;
+	}
 
 }

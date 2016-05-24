@@ -57,6 +57,7 @@ use Illuminate\Database\Seeder;
 			DB::table('users')->insert(array (
 				'name'=> 'Brayan Restrepo',
 				'email' => 'brayan2293@gmail.com',
+				'type' => 'Decano',
 				'password'=> \Hash::make('123456')
 			));
     	}

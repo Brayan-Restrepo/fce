@@ -13,7 +13,7 @@ class CreateTrabajosgradoTable extends Migration {
 	public function up()
 	{
 		Schema::create('trabajosGrado', function(Blueprint $table){
-			$table -> integer('id');
+			$table -> increments('id');
 			$table -> date('fecha');
 			$table -> char('titulo');
 			$table -> char('modalidadGrado');
