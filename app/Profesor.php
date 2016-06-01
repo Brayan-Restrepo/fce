@@ -38,7 +38,8 @@ class Profesor extends Model {
 		$profesoresArray['']='';
 		foreach ($profesores as $profesor) {
 			$nombreProfecor = $profesor->identificacion.' - '.$profesor->nombre1.' '.$profesor->nombre2.' '.$profesor->apellido1.' '.$profesor->apellido2; 
-			$profesoresArray[$profesor->id]=$nombreProfecor;
+			//$profesoresArray[$profesor->id]=$nombreProfecor;
+			$profesoresArray[$nombreProfecor]=$nombreProfecor;
 		}
 		
 		return $profesoresArray;

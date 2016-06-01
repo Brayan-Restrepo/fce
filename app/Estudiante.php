@@ -38,7 +38,8 @@ class Estudiante extends Model {
 		$estudiantesArray['']='';
 		foreach ($estudiantes as $estudiante) {
 			$nombreEstudiante = $estudiante->codigo.' - '.$estudiante->nombre1.' '.$estudiante->nombre2.' '.$estudiante->apellido1.' '.$estudiante->apellido2;
-			$estudiantesArray[$estudiante->id] = $nombreEstudiante;
+			//$estudiantesArray[$estudiante->id] = $nombreEstudiante;
+			$estudiantesArray[$nombreEstudiante] = $nombreEstudiante;
 		}
 		
 		return $estudiantesArray;

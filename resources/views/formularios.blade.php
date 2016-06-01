@@ -1,4 +1,4 @@
-@if ( Auth::user()->type != 'Estudiante')
+@if ( Auth::user()->type != 'Estudiante' && Auth::user()->type != 'Docente')
 	@extends('app')
 
 	@section('htmlheader_title')
@@ -30,8 +30,8 @@
 							@include('form.form-profesor')
 					@elseif(Session::get('formulario')=='Trabajo de Grado')
 						@if(Session::get('editar')==True)
-							{!! Form::model($trabajo_de_grado, ['route' => ['gestionar.profesor.update', '1'], 'method'=>'PUT', 'class'=>'']) !!}							
-							@include('form.edit-form-trabajo-de-grado')	
+							{!! Form::model($trabajo_de_grado, ['route' => ['gestionar.trabajo-de-grado.update', '1'], 'method'=>'PUT', 'class'=>'']) !!}							
+							@include('form.form-trabajo-de-grado')	
 						@else
 							{!! Form::open(['route' => 'gestionar.trabajo-de-grado.store', 'method'=>'POST', 'class'=>'']) !!}
 								@include('form.form-trabajo-de-grado')	

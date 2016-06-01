@@ -26,7 +26,8 @@ class EstadosTG extends Model {
 		$estadosArray = array();
 		
 		foreach ($estados as $estado) {
-			$estadosArray[$estado->id]=$estado->estado;	
+			//$estadosArray[$estado->id] = $estado->estado;	
+			$estadosArray[$estado->estado] = $estado->estado;
 		}
 
 		return $estadosArray;

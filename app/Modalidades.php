@@ -29,7 +29,8 @@ class Modalidades extends Model {
 		$modalidadesArray = array();
 
 		foreach ($modalidades as $modalidad) {
-			$modalidadesArray[$modalidad->id]=$modalidad->descripcion;
+			//$modalidadesArray[$modalidad->id]=$modalidad->descripcion;
+			$modalidadesArray[$modalidad->descripcion]=$modalidad->descripcion;
 		}
 
 		return $modalidadesArray;

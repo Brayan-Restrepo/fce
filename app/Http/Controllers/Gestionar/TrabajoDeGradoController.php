@@ -82,7 +82,15 @@ class TrabajoDeGradoController extends Controller {
 		Session::put('formulario', 'Trabajo de Grado');
 		Session::put('editar', True);
 		$trabajo_de_grado = TrabajoDeGrado::findOrFail($id);
-		return view('formularios', compact('trabajo_de_grado'));
+
+		$profesoresArray = Profesor::profesoresArray();
+		$estudiantesArray = Estudiante::estudiantesArray();
+		$modalidadesArray = Modalidades::modalidadesArray();
+		$estadosArray = EstadosTG::estadosArray();	
+
+		return view('formularios',compact('trabajo_de_grado', 'modalidadesArray','estadosArray','profesoresArray','estudiantesArray'));
+
+		//return view('formularios', compact('trabajo_de_grado'));
 	}
 
 	/**
@@ -91,15 +99,15 @@ class TrabajoDeGradoController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(CreatePacienteRequest $request, $id)
+	public function update(CreateTrabajoDeGradoRequest $request, $id)
 	{
 			////
-		$paciente = Paciente::findOrFail($id);
-		$paciente->fill($request->all());
-		$paciente->save();
+		$trabajo_de_grado = TrabajoDeGrado::findOrFail($id);
+		$trabajo_de_grado->fill($request->all());
+		$trabajo_de_grado->save();
 		//return redirect()->back();
 		//return view('home');
-		return redirect()->route('consulta.pacientes.index');
+		return redirect()->to('gestionar/trabajo-de-grado');
 	}
 
 	/**

@@ -32,7 +32,7 @@
                     <li class=''>
                         <a href="{{ url('estado-trabajo-de-grado')}}"><i class='fa fa-user'></i> <span>Estados</span></a>
                     </li>
-                    @if ( Auth::user()->type != 'Estudiante')
+                    @if ( Auth::user()->type != 'Estudiante' && Auth::user()->type != 'Docente')
                         <li class=''>
                             <a href="{{ url('gestionar/trabajo-de-grado/create')}}"><i class='fa fa-user'></i> <span>Nuevo Trabajo de Grado</span></a>
                         </li>
@@ -43,6 +43,7 @@
                 </ul>
             </li>
         @if ( Auth::user()->type != 'Estudiante')
+            @if(Auth::user()->type != 'Docente')
             <li class="treeview">
                 <a href="#"><i class='fa fa-child'></i> <span>Estudiante</span></a>
                 <ul class="treeview-menu">
@@ -54,15 +55,18 @@
                     </li>
                 </ul>
             </li>
+            @endif
             <li class="treeview">
                 <a href="#"><i class='fa fa-user'></i> <span>Docentes</span></a>
                 <ul class="treeview-menu">
                     <li class=''>
                         <a href="{{ url('gestionar/profesor')}}"><i class='fa fa-group'></i> <span>Lista de Docentes</span></a>
                     </li>
+                    @if( Auth::user()->type != 'Docente')
                     <li class=''>
                         <a href="{{ url('gestionar/profesor/create')}}"><i class='fa fa-user-plus'></i> <span>Agregar Docente</span></a>
                     </li>
+                    @endif
                 </ul>
             </li>
         @endif
