@@ -32,14 +32,17 @@
                     <li class=''>
                         <a href="{{ url('estado-trabajo-de-grado')}}"><i class='fa fa-user'></i> <span>Estados</span></a>
                     </li>
-                    <li class=''>
-                        <a href="{{ url('gestionar/trabajo-de-grado/create')}}"><i class='fa fa-user'></i> <span>Nuevo Trabajo de Grado</span></a>
-                    </li>
+                    @if ( Auth::user()->type != 'Estudiante')
+                        <li class=''>
+                            <a href="{{ url('gestionar/trabajo-de-grado/create')}}"><i class='fa fa-user'></i> <span>Nuevo Trabajo de Grado</span></a>
+                        </li>
+                    @endif
                     <li class=''>
                         <a href="{{ url('gestionar/trabajo-de-grado')}}"><i class='fa  fa-group'></i> <span>Lista de Trabajos de Grados</span></a>
                     </li>
                 </ul>
             </li>
+        @if ( Auth::user()->type != 'Estudiante')
             <li class="treeview">
                 <a href="#"><i class='fa fa-child'></i> <span>Estudiante</span></a>
                 <ul class="treeview-menu">
@@ -62,6 +65,7 @@
                     </li>
                 </ul>
             </li>
+        @endif
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

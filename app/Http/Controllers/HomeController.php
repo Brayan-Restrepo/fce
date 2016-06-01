@@ -37,7 +37,9 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+		$modalidades = Modalidades::all();
+		$estadostg = EstadosTG::all();
+		return view('home',compact('modalidades','estadostg'));
 	}
 
 	public function modalidad(){

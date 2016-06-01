@@ -25,6 +25,7 @@ class CreateProfesorTable extends Migration {
 			$table -> char('especializacion');
 			$table -> char('maestria');
 			$table -> char('doctorado');
+			$table -> string('email');
 			$table->timestamps();
 		});
 	}

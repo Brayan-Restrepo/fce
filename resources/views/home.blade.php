@@ -1,18 +1,16 @@
 @extends('app')
 
-@section('content')
+@section('main-content')
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<div class="panel panel-default">
-				<div class="panel-heading">Home</div>
-				eee
-				<div class="panel-body">
-					You are logged in!
-				</div>
-			</div>
+		<div class="col-md-5 col-lg-offset-1">
+			@include('table.tabla-estadostg')
 		</div>
+		<div class="col-md-4">
+			@include('table.tabla-modalidades')
+		</div>
+		
 	</div>
 </div>
 @endsection

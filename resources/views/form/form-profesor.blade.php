@@ -56,6 +56,10 @@
 				        {!! Form::label('apellido2', 'Segundo Apellido', ['class'=>'']) !!}    
 				        {!! Form::text('apellido2', null, ['class'=>'form-control', 'placeholder'=>"Segundo Apellido"]) !!}
 				    </div>
+				    <div class="form-group">
+				        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
+				        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
+				    </div>
 				</div>
 		    </div>
 	    	<!-- Fin Info Basica -->

@@ -22,6 +22,7 @@
 				<th>Estado</th>
 				<th>Acta de Sustentacion</th>
 				<th>Fecha de Sustentacion</th>
+		    	<th>Editar</th>
 		    </tr>
 		    @foreach ($trabajo_de_grado as $trabajoG)
 				<tr>
@@ -37,6 +38,9 @@
 					<td>{{ $trabajoG->estado }}</td>
 					<td>{{ $trabajoG->actaSustentacion }}</td>
 					<td>{{ $trabajoG->fechaSustentacion }}</td>
+					<td>
+		                <a class='btn btn-success' href="{{ route('gestionar.trabajo-de-grado.edit',$trabajoG->id) }}">Editar</a>
+		            </td>
 		            
 				</tr>
 		    @endforeach

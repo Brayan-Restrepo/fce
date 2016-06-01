@@ -27,14 +27,15 @@ class Profesor extends Model {
 		'pregrado',
 		'especializacion',
 		'maestria',
-		'doctorado'
+		'doctorado',
+		'email'
 		];
 
 	public function scopeProfesoresArray($query){
 
 		$profesores = Profesor::all();
 		$profesoresArray = array();
-
+		$profesoresArray['']='';
 		foreach ($profesores as $profesor) {
 			$nombreProfecor = $profesor->identificacion.' - '.$profesor->nombre1.' '.$profesor->nombre2.' '.$profesor->apellido1.' '.$profesor->apellido2; 
 			$profesoresArray[$profesor->id]=$nombreProfecor;

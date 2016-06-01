@@ -5,8 +5,10 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Profesor;
+use App\User;
 use App\Http\Requests\CreateProfesorRequest;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Validator;
 
 class ProfesoresController extends Controller {
 
@@ -42,7 +44,24 @@ class ProfesoresController extends Controller {
 	public function store(CreateProfesorRequest $request)
 	{
 			$profesor = Profesor::create($request->all());
-			return redirect()->to('home');
+
+			$data = [
+	        	'name'=> 	$profesor->nombre1.' '.$profesor->apellido1,
+	        	'email'=>	$profesor->email,
+	        	'type'=>	'Docente',
+	        	'password'=>\Hash::make($profesor->identificacion)
+	        	];
+			$rules = array(
+				'name' => 'required', 
+				'email' => 'required', 
+				'password' => 'required',
+				'type' => 'required'
+			);
+	        $validador = Validator::make($data, $rules);
+	        
+			$user = User::create($data);
+
+			return redirect()->to('gestionar/profesor');
 	}
 
 	/**

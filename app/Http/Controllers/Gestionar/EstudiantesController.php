@@ -4,10 +4,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Estudiante;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateEstudianteRequest;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Validator;
 class EstudiantesController extends Controller {
 
 	/**
@@ -15,6 +16,7 @@ class EstudiantesController extends Controller {
 	 *
 	 * @return Response
 	 */
+	
 	public function index()
 	{
 		$estudiante = Estudiante::all();
@@ -45,7 +47,22 @@ class EstudiantesController extends Controller {
 	{
 			$estudiante = Estudiante::create($request->all());
 	        
-			return redirect()->to('home');
+
+	        $data = [
+	        	'name'=> 	$estudiante->nombre1.' '.$estudiante->apellido1,
+	        	'email'=>	$estudiante->email,
+	        	'password'=>\Hash::make($estudiante->codigo)
+	        	];
+			$rules = array(
+				'name' => 'required', 
+				'email' => 'required', 
+				'password' => 'required'
+			);
+	        $validador = Validator::make($data, $rules);
+	        
+			$user = User::create($data);
+
+			return redirect()->to('gestionar/estudiante');
 	}
 
 	/**
