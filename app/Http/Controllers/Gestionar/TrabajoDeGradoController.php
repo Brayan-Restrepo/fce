@@ -43,9 +43,8 @@ class TrabajoDeGradoController extends Controller {
 		$profesoresArray = Profesor::profesoresArray();
 		$estudiantesArray = Estudiante::estudiantesArray();
 		$modalidadesArray = Modalidades::modalidadesArray();
-		$estadosArray = EstadosTG::estadosArray();	
-
-		return view('formularios',compact('modalidadesArray','estadosArray','profesoresArray','estudiantesArray'));
+		$estadosArray = EstadosTG::estadosArray();
+		return view('formularios',compact('profesoresArray','estudiantesArray','modalidadesArray','estadosArray'));
 	}
 
 	/**
@@ -78,7 +77,7 @@ class TrabajoDeGradoController extends Controller {
 	 */
 	public function edit($id)
 	{
-		Session::put('menu', 'Nuevo Trabajo de Grado');
+		Session::put('menu', 'Editar Trabajo de Grado');
 		Session::put('formulario', 'Trabajo de Grado');
 		Session::put('editar', True);
 		$trabajo_de_grado = TrabajoDeGrado::findOrFail($id);
@@ -87,7 +86,7 @@ class TrabajoDeGradoController extends Controller {
 		$estudiantesArray = Estudiante::estudiantesArray();
 		$modalidadesArray = Modalidades::modalidadesArray();
 		$estadosArray = EstadosTG::estadosArray();	
-
+		//dd($trabajo_de_grado->estudiante1);
 		return view('formularios',compact('trabajo_de_grado', 'modalidadesArray','estadosArray','profesoresArray','estudiantesArray'));
 
 		//return view('formularios', compact('trabajo_de_grado'));

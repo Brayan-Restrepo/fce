@@ -35,6 +35,7 @@ class EstudiantesController extends Controller {
 		//
 		Session::put('menu', 'Agregar Estudiante');
 		Session::put('formulario', 'Estudiante');
+		Session::put('editar', False);
 		return view('formularios');
 	}
 
@@ -84,7 +85,12 @@ class EstudiantesController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		Session::put('menu', 'Editar Estudiante');
+		Session::put('formulario', 'Estudiante');
+		Session::put('editar', True);
+		$estudiante = Estudiante::findOrFail($id);
+		return view('formularios',compact('estudiante'));
+
 	}
 
 	/**
@@ -93,9 +99,14 @@ class EstudiantesController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(CreateEstudianteRequest $request, $id)
 	{
-		//
+		$estudiante = Estudiante::findOrFail($id);
+		$estudiante->fill($request->all());
+		$estudiante->save();
+		//return redirect()->back();
+		//return view('home');
+		return redirect()->to('gestionar/estudiante');
 	}
 
 	/**

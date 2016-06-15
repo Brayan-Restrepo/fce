@@ -19,6 +19,7 @@
 				<th>Barrio</th>
 				<th>Celular</th>
 				<th>Emai</th>
+				<th>Editar</th>
 		    </tr>
 		    @foreach ($estudiante as $estudiantes)
 				<tr>
@@ -31,7 +32,9 @@
 					<td>{{ $estudiantes->barrio }}</td>
 					<td>{{ $estudiantes->celular }}</td>
 					<td>{{ $estudiantes->email }}</td>
-		            
+		            <td>
+		                <a class='btn btn-success' href="{{ route('gestionar.estudiante.edit',$estudiantes->id) }}">Editar</a>
+		            </td>
 				</tr>
 		    @endforeach
 		</table>

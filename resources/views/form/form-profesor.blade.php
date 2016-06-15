@@ -1,7 +1,7 @@
 
 	<div class="box box-solid box-primary">
 		<div class="box-header">
-			<h3 class="box-title">Agregar Profesor</h3>
+			<h3 class="box-title">{{ Session::get('menu') }}</h3>
 			<div class="box-tools pull-right">
 				<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 			</div>
@@ -56,9 +56,13 @@
 				        {!! Form::label('apellido2', 'Segundo Apellido', ['class'=>'']) !!}    
 				        {!! Form::text('apellido2', null, ['class'=>'form-control', 'placeholder'=>"Segundo Apellido"]) !!}
 				    </div>
-				    <div class="form-group">
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
 				        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
 				        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
+				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('celular', 'Celular', ['class'=>'']) !!}    
+				        {!! Form::text('celular', null, ['class'=>'form-control', 'placeholder'=>"Celular"]) !!}
 				    </div>
 				</div>
 		    </div>

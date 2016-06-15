@@ -32,7 +32,8 @@ class ProfesoresController extends Controller {
 	public function create()
 	{
 		Session::put('menu', 'Agregar Profesor');
-		Session::put('formulario', 'Profesor');
+		Session::put('formulario', 'Profesor');		
+		Session::put('editar', False);
 		return view('formularios');
 	}
 
@@ -83,7 +84,11 @@ class ProfesoresController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		Session::put('menu', 'Editar Profesor');
+		Session::put('formulario', 'Profesor');
+		Session::put('editar', True);
+		$profesor = Profesor::findOrFail($id);
+		return view('formularios',compact('profesor'));
 	}
 
 	/**
@@ -92,9 +97,14 @@ class ProfesoresController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(CreateProfesorRequest $request, $id)
 	{
-		//
+		$profesor = Profesor::findOrFail($id);
+		$profesor->fill($request->all());
+		$profesor->save();
+		//return redirect()->back();
+		//return view('home');
+		return redirect()->to('gestionar/profesor');
 	}
 
 	/**

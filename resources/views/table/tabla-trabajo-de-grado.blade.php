@@ -22,7 +22,9 @@
 				<th>Estado</th>
 				<th>Acta de Sustentacion</th>
 				<th>Fecha de Sustentacion</th>
+		    	@if(Auth::user()->type != 'Estudiante')
 		    	<th>Editar</th>
+		    	@endif
 		    </tr>
 		    @foreach ($trabajo_de_grado as $trabajoG)
 				<tr>
@@ -38,10 +40,11 @@
 					<td>{{ $trabajoG->estado }}</td>
 					<td>{{ $trabajoG->actaSustentacion }}</td>
 					<td>{{ $trabajoG->fechaSustentacion }}</td>
+					@if(Auth::user()->type != 'Estudiante')
 					<td>
 		                <a class='btn btn-success' href="{{ route('gestionar.trabajo-de-grado.edit',$trabajoG->id) }}">Editar</a>
 		            </td>
-		            
+		            @endif		            
 				</tr>
 		    @endforeach
 		</table>

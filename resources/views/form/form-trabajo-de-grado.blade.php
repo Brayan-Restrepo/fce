@@ -21,7 +21,7 @@
 				<div class='col-lg-6'>	    
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('jurado1', 'Primer Jurado', ['class'=>'']) !!}
-				        {!! Form::select('jurado1',$profesoresArray, null, ['class'=>'form-control', 'placeholder'=>"Primer Jurado"]) !!}
+				        {!! Form::select('jurado1',$profesoresArray, null, ['class'=>'form-control','id'=>'jurado1', 'placeholder'=>"Primer Jurado"]) !!}
 				        
 				    </div>
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
@@ -33,8 +33,7 @@
 				        {!! Form::label('director', 'Director', ['class'=>'']) !!}    
 				        {!! Form::select('director',$profesoresArray, null, ['class'=>'form-control', 'placeholder'=>"Director"]) !!}
 				    </div>
-				    
-				    
+				   				    
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('estado', 'Estado', ['class'=>'']) !!}    
 				        {!! Form::select('estado',$estadosArray, null, ['class'=>'form-control', 'placeholder'=>"Estado"]) !!}

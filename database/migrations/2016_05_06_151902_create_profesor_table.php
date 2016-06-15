@@ -20,6 +20,7 @@ class CreateProfesorTable extends Migration {
 			$table -> char('apellido2');
 			$table -> char('nombre1');
 			$table -> char('nombre2');
+			$table -> char('celular');
 			$table -> date('fechaNac');
 			$table -> char('pregrado');
 			$table -> char('especializacion');

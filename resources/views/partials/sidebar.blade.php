@@ -22,7 +22,8 @@
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
             <li class=''><a href="{{ url('home')}}"><i class='fa fa-home'></i> <span>Inicio</span></a></li>  
-
+            <li class=''><a href="{{ url('home')}}"><i class='fa fa-user'></i> <span>Perfil</span></a></li>
+            
             <li class="treeview">
                 <a href="#"><i class='fa fa-graduation-cap'></i> <span> Trabajo de Grado</span></a>
                 <ul class="treeview-menu">
@@ -42,8 +43,8 @@
                     </li>
                 </ul>
             </li>
-        @if ( Auth::user()->type != 'Estudiante')
-            @if(Auth::user()->type != 'Docente')
+        @if ( Auth::user()->type == 'Decano' || Auth::user()->type == 'Secretaria' || Auth::user()->type == 'Admin')
+            
             <li class="treeview">
                 <a href="#"><i class='fa fa-child'></i> <span>Estudiante</span></a>
                 <ul class="treeview-menu">
@@ -55,18 +56,15 @@
                     </li>
                 </ul>
             </li>
-            @endif
             <li class="treeview">
                 <a href="#"><i class='fa fa-user'></i> <span>Docentes</span></a>
                 <ul class="treeview-menu">
                     <li class=''>
                         <a href="{{ url('gestionar/profesor')}}"><i class='fa fa-group'></i> <span>Lista de Docentes</span></a>
                     </li>
-                    @if( Auth::user()->type != 'Docente')
                     <li class=''>
                         <a href="{{ url('gestionar/profesor/create')}}"><i class='fa fa-user-plus'></i> <span>Agregar Docente</span></a>
                     </li>
-                    @endif
                 </ul>
             </li>
         @endif

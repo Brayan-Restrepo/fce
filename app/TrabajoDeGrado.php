@@ -32,7 +32,5 @@ class TrabajoDeGrado extends Model {
 		'fechaSustentacion'
 		];
 
-	public function modalidad(){
-        return $this->belongsTo('App\Modalidades');
-    }
+
 }

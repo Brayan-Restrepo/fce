@@ -23,6 +23,7 @@ class Profesor extends Model {
 		'apellido2',
 		'nombre1',
 		'nombre2',
+		'celular',
 		'fechaNac',
 		'pregrado',
 		'especializacion',

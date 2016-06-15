@@ -14,11 +14,13 @@
 				<th>Identificacion</th>				
 				<th>Nombres</th>
 				<th>Apellidos</th>
+				<th>Celular</th>
 				<th>Fecha Nacimiento</th>
 				<th>Pregrado</th>
 				<th>Especializacion</th>
 				<th>Maestria</th>
 				<th>Doctorado</th>
+				<th>Editar</th>
 		    </tr>
 		    @foreach ($profesores as $profesor)
 				<tr>
@@ -26,12 +28,15 @@
 					<td>{{ $profesor->identificacion }}</td>
 					<td>{{ $profesor->nombre1 }} {{ $profesor->nombre2 }}</td>
 					<td>{{ $profesor->apellido1 }} {{ $profesor->apellido2 }}</td>
+					<td>{{ $profesor->celular }}</td>
 					<td>{{ $profesor->fechaNac }}</td>
 					<td>{{ $profesor->pregrado }}</td>
 					<td>{{ $profesor->especializacion }}</td>
 					<td>{{ $profesor->maestria }}</td>
 					<td>{{ $profesor->doctorado }}</td>
-		            
+		            <td>
+		                <a class='btn btn-success' href="{{ route('gestionar.profesor.edit',$profesor->id) }}">Editar</a>
+		            </td>
 				</tr>
 		    @endforeach
 		</table>

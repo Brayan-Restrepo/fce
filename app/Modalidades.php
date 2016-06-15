@@ -19,9 +19,6 @@ class Modalidades extends Model {
 	protected $guarded = ['id'];
 	protected $fillable = ['descripcion'];
 
-	public function trabajoDeGrado(){
-        return $this->hasMany('App\TrabajoDeGrado');
-    }
 
 	public function scopeModalidadesArray($query){
 		

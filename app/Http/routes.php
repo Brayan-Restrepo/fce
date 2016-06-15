@@ -29,3 +29,8 @@ Route::group(['prefix'=>'gestionar','middleware'=>['auth'], 'namespace'=>'Gestio
 	Route::resource('trabajo-de-grado','TrabajoDeGradoController');
 
 });
+
+Route::group(['prefix'=>'admin','middleware'=>['auth'], 'namespace'=>'Admin'], function(){	
+	Route::resource('modalidad','ModalidadController');
+	Route::resource('estado','EstadoController');
+});

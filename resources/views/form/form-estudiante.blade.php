@@ -1,7 +1,7 @@
 
 	<div class="box box-solid box-primary">
 		<div class="box-header">
-			<h3 class="box-title">Agregar Estudiante</h3>
+			<h3 class="box-title">{{ Session::get('menu') }}</h3>
 			<div class="box-tools pull-right">
 				<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 			</div>

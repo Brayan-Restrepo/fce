@@ -47,7 +47,36 @@ use Illuminate\Database\Seeder;
 				'estado'=> 'Rechazada Resol 007 de 2014'	
 			));
 
-
+			DB::table('users')->insert(array (
+				'name'=> 'Ricardo Lindarte',
+				'email' => 'admin@gmail.com',
+				'type' => 'Admin',
+				'password'=> \Hash::make('123456')
+			));
+			DB::table('users')->insert(array (
+				'name'=> 'Ricardo Lindarte',
+				'email' => 'Secretaria@gmail.com',
+				'type' => 'Secretaria',
+				'password'=> \Hash::make('123456')
+			));
+			DB::table('users')->insert(array (
+				'name'=> 'Ricardo Lindarte',
+				'email' => 'director@gmail.com',
+				'type' => 'Director',
+				'password'=> \Hash::make('123456')
+			));
+			DB::table('users')->insert(array (
+				'name'=> 'Brayan Restrepo',
+				'email' => 'docente@gmail.com',
+				'type' => 'Docente',
+				'password'=> \Hash::make('123456')
+			));
+			DB::table('users')->insert(array (
+				'name'=> 'Brayan Restrepo',
+				'email' => 'estudiante@gmail.com',
+				'type' => 'Estudiante',
+				'password'=> \Hash::make('123456')
+			));
 			DB::table('users')->insert(array (
 				'name'=> 'Brayan Restrepo',
 				'email' => 'brayan2293@gmail.com',

@@ -24,7 +24,6 @@ class EstadosTG extends Model {
 		
 		$estados = EstadosTG::all();
 		$estadosArray = array();
-		
 		foreach ($estados as $estado) {
 			//$estadosArray[$estado->id] = $estado->estado;	
 			$estadosArray[$estado->estado] = $estado->estado;
