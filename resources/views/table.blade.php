@@ -22,9 +22,13 @@
 				<div class="col-md-5 col-lg-offset-3">
 				@include('table.tabla-estadostg')
 			@elseif(Session::get('menu')=='Lista de Trabajos de Grados')
-				<div class="col-md-11">
+				<div class="col-md-12">
 				@include('table.tabla-trabajo-de-grado')
+			@elseif(Session::get('menu')=='Lista Proceso de Trabajos de Grados')
+				<div class="col-md-12">
+				@include('table.tabla-proceso-trabajo-de-grado')
 			@endif
+
 		</div>
 	</div>
 </div>

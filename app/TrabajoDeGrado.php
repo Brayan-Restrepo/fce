@@ -21,6 +21,7 @@ class TrabajoDeGrado extends Model {
 	protected $fillable = [
 		'fecha',
 		'titulo',
+		'radicado',
 		'modalidadGrado',
 		'director',
 		'estudiante1',
@@ -32,5 +33,8 @@ class TrabajoDeGrado extends Model {
 		'fechaSustentacion'
 		];
 
+		public function procesoTG(){
+    		return $this->hasMany('App\ProcesoTG');
+	   	}
 
 }

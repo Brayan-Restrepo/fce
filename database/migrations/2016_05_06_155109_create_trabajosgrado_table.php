@@ -16,6 +16,7 @@ class CreateTrabajosgradoTable extends Migration {
 			$table -> increments('id');
 			$table -> date('fecha');
 			$table -> char('titulo');
+			$table -> char('radicado');
 			$table -> char('modalidadGrado');
 			$table -> char('director');
 			$table -> char('estudiante1');

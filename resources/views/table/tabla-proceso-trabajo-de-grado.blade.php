@@ -25,10 +25,8 @@
 				<th>Fecha de Sustentacion</th>
 		    	@if(Auth::user()->type == 'Admin' || Auth::user()->type == 'Director')
 		    	<th>Editar</th>
-		    	<th>Proceso</th>
 		    	@endif
 		    </tr>
-		    @foreach ($trabajo_de_grado as $trabajoG)
 				<tr>
 					<td>{{ $trabajoG->id }}</td>
 					<td>{{ $trabajoG->fecha }}</td>
@@ -47,12 +45,51 @@
 					<td>
 		                <a class='btn btn-success' href="{{ route('gestionar.trabajo-de-grado.edit',$trabajoG->id) }}">Editar</a>
 		            </td>
-		            <td>
-		            	<a class='btn btn-success' href="{{ route('gestionar.proceso-trabajo-de-grado.lista',$trabajoG->id) }}">Add</a>
-		            </td>
 		            @endif		            
 				</tr>
-		    @endforeach
 		</table>
+	</div>
+</div>
+
+<div class='box box-primary box-solid'>
+	<div class="box-header">
+		<h3 class="box-title">{{ Session::get('subMenu') }}</h3>
+		<div class="box-tools pull-right">
+			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+		</div>
+	</div>
+	<div class="box-body form-horizontal">
+		{!! Form::open(['route' => 'gestionar.proceso-trabajo-de-grado.store', 'method'=>'POST', 'class'=>'','style'=>"padding-bottom: 20px;"]) !!}
+
+			@include('form.form-acta-de-comite')
+
+			<button type="submit" class="btn btn-lg btn-success">Registrar Acta</button>
+
+		{!! Form::close() !!}
+		<?php $i = 0 ?>
+		@foreach ($procesoTG as $proceso)
+			<?php $i = $i+1 ?>
+			@if($i == count($procesoTG))
+				<div class="well col-lg-12">
+					<p>{{ $proceso->decision }}</p>
+					{!! Form::model($proceso, ['route' => ['gestionar.proceso-trabajo-de-grado.update', $proceso->id], 'method'=>'PUT', 'class'=>'']) !!}					
+						@include('form.form-editar-acta-comite')
+						<div class="col-lg-2 col-lg-offset-10">
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalComite">
+	  						Editar
+							</button>
+						</div>
+					{!! Form::close() !!}
+				</div>
+			@else
+				<div class="well">
+					<p>{{ $proceso->decision }}</p>
+				</div>
+			@endif
+		@endforeach
+		<!-- Button trigger modal -->
+
+
+
 	</div>
 </div>

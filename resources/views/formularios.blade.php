@@ -43,7 +43,7 @@
 						@else
 							{!! Form::open(['route' => 'gestionar.trabajo-de-grado.store', 'method'=>'POST', 'class'=>'']) !!}
 						@endif
-						@include('form.form-trabajo-de-grado')	
+						@include('form.form-trabajo-de-grado')
 					@endif
 
 					<button type="submit" class="btn btn-lg btn-success">Registrar {{ Session::get('formulario') }}</button>

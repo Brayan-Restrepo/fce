@@ -61,7 +61,7 @@
 				        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
 				    </div>
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('celular', 'Celular', ['class'=>'']) !!}    
+				        {!! Form::label('Celular', 'Celular', ['class'=>'']) !!}    
 				        {!! Form::text('celular', null, ['class'=>'form-control', 'placeholder'=>"Celular"]) !!}
 				    </div>
 				</div>

@@ -16,7 +16,8 @@ class Estudiante extends Model {
 	 * 
 	 * @var array
 	 */
-	protected $guarded = ['id'];// los campos que no aceptan
+	//protected $guarded = ['id'];// los campos que no aceptan
+	//protected $primaryKey='codigo';
 	protected $fillable = [
 		'codigo',
 		'identificacion',

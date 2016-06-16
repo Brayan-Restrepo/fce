@@ -8,17 +8,11 @@
 		<div class="box-body">
 			<!-- Info Basica -->
 			<div class="row">
-				<div class='col-lg-12'>
-					<div class='form-group col-lg-9' style="padding-left: 0px;">
+				<div class='col-lg-6'>
+					<div class='form-group col-lg-12' style="padding-left: 0px;">
 				        {!! Form::label('titulo', 'Titulo', ['class'=>'']) !!}
 				        {!! Form::text('titulo', null, ['class'=>'form-control', 'placeholder'=>"Titulo"]) !!}
 				    </div>
-					<div class='form-group col-lg-3' style="padding-left: 0px;">
-				        {!! Form::label('fecha', 'Fecha', ['class'=>'']) !!}
-				        {!! Form::text('fecha', null, ['class'=>'form-control', 'placeholder'=>"Fecha"]) !!}
-				    </div>
-				</div>
-				<div class='col-lg-6'>	    
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('jurado1', 'Primer Jurado', ['class'=>'']) !!}
 				        {!! Form::select('jurado1',$profesoresArray, null, ['class'=>'form-control','id'=>'jurado1', 'placeholder'=>"Primer Jurado"]) !!}
@@ -40,7 +34,15 @@
 				    </div>
 				   
 				</div>
-				<div class='col-lg-6'>				
+				<div class='col-lg-6'>
+					<div class='form-group col-lg-6' style="padding-left: 0px;">
+				        {!! Form::label('radicado', 'Radicado', ['class'=>'']) !!}
+				        {!! Form::text('radicado', null, ['class'=>'form-control', 'placeholder'=>"Radicado"]) !!}
+				    </div>
+					<div class='form-group col-lg-6' style="padding-left: 0px;">
+				        {!! Form::label('fecha', 'Fecha', ['class'=>'']) !!}
+				        {!! Form::text('fecha', null, ['class'=>'form-control', 'placeholder'=>"Fecha"]) !!}
+				    </div>		
 					<div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('estudiante1', 'Primer Estudiante', ['class'=>'']) !!}    
 				        {!! Form::select('estudiante1',$estudiantesArray, null, ['class'=>'form-control', 'placeholder'=>"Primer Estudiante"]) !!}

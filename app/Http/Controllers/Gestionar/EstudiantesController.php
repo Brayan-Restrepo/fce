@@ -20,7 +20,6 @@ class EstudiantesController extends Controller {
 	public function index()
 	{
 		$estudiante = Estudiante::all();
-		
 		Session::put('menu', 'Estudiantes');
 		return view('table',compact('estudiante'));	
 	}

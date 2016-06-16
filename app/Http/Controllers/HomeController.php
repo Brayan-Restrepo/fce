@@ -52,6 +52,6 @@ class HomeController extends Controller {
 	public function estadotg(){
 		$estadostg = EstadosTG::all();
 		Session::put('menu', 'Estados Trabajos de Gados');
-		return view('table',compact('estadostg'))
+		return view('table',compact('estadostg'));
 	}
 }

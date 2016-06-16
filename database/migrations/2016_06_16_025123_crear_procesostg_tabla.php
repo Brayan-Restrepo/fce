@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProcesotrabajogradoTable extends Migration {
+class CrearProcesostgTabla extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -14,13 +14,15 @@ class CreateProcesotrabajogradoTable extends Migration {
 	{
 		Schema::create('procesoTG', function(Blueprint $table){
 			$table -> increments('id');
-			$table -> integer('trabajoGrado');
-			$table -> date('fecha');
-			$table -> char('actaComite');
-			$table -> char('estado');
-			$table -> char('decision');
-			$table -> char('actaSustentacion');
+			$table -> text('decision');
+			
+			$table->integer('trabajosGrado_id')->unsigned();
+			$table->foreign('trabajosGrado_id')
+                  ->references('id')->on('trabajosGrado')
+                  ->onDelete('cascade');
+
 			$table -> timestamps();
+
 		});
 	}
 
