@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Profesor;
 use App\User;
+use App\Programa;
 use App\Http\Requests\CreateProfesorRequest;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -34,7 +35,8 @@ class ProfesoresController extends Controller {
 		Session::put('menu', 'Agregar Profesor');
 		Session::put('formulario', 'Profesor');		
 		Session::put('editar', False);
-		return view('formularios');
+		$programasArray = Programa::ProgramasArray();
+		return view('formularios',compact('programasArray'));
 	}
 
 	/**
@@ -88,7 +90,8 @@ class ProfesoresController extends Controller {
 		Session::put('formulario', 'Profesor');
 		Session::put('editar', True);
 		$profesor = Profesor::findOrFail($id);
-		return view('formularios',compact('profesor'));
+		$programasArray = Programa::ProgramasArray();
+		return view('formularios',compact('profesor','programasArray'));
 	}
 
 	/**

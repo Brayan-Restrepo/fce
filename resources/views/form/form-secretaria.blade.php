@@ -1,4 +1,5 @@
 
+
 	<div class="box box-solid box-primary">
 		<div class="box-header">
 			<h3 class="box-title">{{ Session::get('menu') }}</h3>
@@ -17,24 +18,14 @@
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
 				        {!! Form::label('fechaNac', 'Fecha de Nacimiento', ['class'=>'']) !!}
 				        {!! Form::text('fechaNac', null, ['class'=>'form-control', 'placeholder'=>"Fecha de Nacimiento"]) !!}        
-				    </div>	
-				    
-				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('pregrado', 'Pregrado', ['class'=>'']) !!}    
-				        {!! Form::text('pregrado', null, ['class'=>'form-control', 'placeholder'=>"Pregrado"]) !!}
 				    </div>
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('especializacion', 'Especializacion', ['class'=>'']) !!}
-				        {!! Form::text('especializacion', null, ['class'=>'form-control', 'placeholder'=>"Especializacion"]) !!}
-				        
+				        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
+				        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
 				    </div>
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('maestria', 'Maestria', ['class'=>'']) !!}    
-				        {!! Form::text('maestria', null, ['class'=>'form-control', 'placeholder'=>"Maestria"]) !!}
-				    </div>
-				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('doctorado', 'Doctorado', ['class'=>'']) !!}    
-				        {!! Form::text('doctorado', null, ['class'=>'form-control', 'placeholder'=>"Doctorado"]) !!}
+				        {!! Form::label('Celular', 'Celular', ['class'=>'']) !!}    
+				        {!! Form::text('celular', null, ['class'=>'form-control', 'placeholder'=>"Celular"]) !!}
 				    </div>
 	    			<div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('programa_id', 'Seleccione un Programa', ['class'=>'']) !!}    
@@ -59,14 +50,6 @@
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
 				        {!! Form::label('apellido2', 'Segundo Apellido', ['class'=>'']) !!}    
 				        {!! Form::text('apellido2', null, ['class'=>'form-control', 'placeholder'=>"Segundo Apellido"]) !!}
-				    </div>
-				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
-				        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
-				    </div>
-				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('Celular', 'Celular', ['class'=>'']) !!}    
-				        {!! Form::text('celular', null, ['class'=>'form-control', 'placeholder'=>"Celular"]) !!}
 				    </div>
 				</div>
 		    </div>

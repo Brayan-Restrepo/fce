@@ -20,6 +20,7 @@
 				<th>Especializacion</th>
 				<th>Maestria</th>
 				<th>Doctorado</th>
+				<th>Programa</th>
 				<th>Editar</th>
 		    </tr>
 		    @foreach ($profesores as $profesor)
@@ -34,6 +35,7 @@
 					<td>{{ $profesor->especializacion }}</td>
 					<td>{{ $profesor->maestria }}</td>
 					<td>{{ $profesor->doctorado }}</td>
+					<td>{{ $profesor->programa->nombre }}</td>
 		            <td>
 		                <a class='btn btn-success' href="{{ route('gestionar.profesor.edit',$profesor->id) }}">Editar</a>
 		            </td>

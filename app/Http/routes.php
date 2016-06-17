@@ -25,6 +25,10 @@ Route::group(['prefix'=>'gestionar','middleware'=>['auth'], 'namespace'=>'Gestio
 	
 	Route::resource('estudiante','EstudiantesController');
 	Route::resource('profesor','ProfesoresController');
+	Route::resource('secretaria','secretariaController');
+	Route::resource('director','directorController');
+	Route::resource('decano','decanoController');
+
 	Route::resource('trabajo-de-grado','TrabajoDeGradoController');
 	Route::resource('proceso-trabajo-de-grado','ProcesoTGController');
 

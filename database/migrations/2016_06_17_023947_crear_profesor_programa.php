@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CrearSecretariaTabla extends Migration {
+class CrearProfesorPrograma extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,13 @@ class CrearSecretariaTabla extends Migration {
 	 */
 	public function up()
 	{
-		//
+		
+		Schema::table('profesores', function ($table) {
+		    $table->integer('programa_id')->unsigned();
+
+		    $table->foreign('programa_id')->references('id')->on('programa')->onDelete('cascade');
+		});
+
 	}
 
 	/**

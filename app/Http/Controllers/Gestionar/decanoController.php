@@ -5,27 +5,13 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use App\TrabajoDeGrado;
-use App\ProcesoTG;
-
-use App\Http\Requests\CreateProcesoTGRequest;
-use Illuminate\Support\Facades\Session;
-
-class ProcesoTGController extends Controller {
+class decanoController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function lista($idTG){
-		$trabajoG = TrabajoDeGrado::findOrFail($idTG);
-		$procesoTG = ProcesoTG::where('trabajosGrado_id', $idTG)->get();
-		Session::put('menu', 'Lista Proceso de Trabajos de Grados');
-		Session::put('subMenu', 'Acta de Comite');
-		return view('table',compact('trabajoG','procesoTG'));
-	}
-
 	public function index()
 	{
 		//
@@ -38,7 +24,7 @@ class ProcesoTGController extends Controller {
 	 */
 	public function create()
 	{
-		
+		//
 	}
 
 	/**
@@ -46,10 +32,9 @@ class ProcesoTGController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CreateProcesoTGRequest $request)
+	public function store()
 	{
-		ProcesoTG::create($request->all());
-		return redirect()->back();
+		//
 	}
 
 	/**
@@ -80,15 +65,9 @@ class ProcesoTGController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-public function update(CreateProcesoTGRequest $request, $id)
+	public function update($id)
 	{
-			////
-		$procesoTG = ProcesoTG::findOrFail($id);
-		$procesoTG->fill($request->all());
-		$procesoTG->save();
-		//return redirect()->back();
-		//return view('home');
-		return redirect()->back();
+		//
 	}
 
 	/**

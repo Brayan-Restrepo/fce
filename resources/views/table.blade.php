@@ -27,6 +27,9 @@
 			@elseif(Session::get('menu')=='Lista Proceso de Trabajos de Grados')
 				<div class="col-md-12">
 				@include('table.tabla-proceso-trabajo-de-grado')
+			@elseif(Session::get('menu')=='Lista de Secretarias')
+				<div class="col-md-12">
+				@include('table.tabla-secretaria')
 			@endif
 
 		</div>

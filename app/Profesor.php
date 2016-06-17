@@ -29,8 +29,20 @@ class Profesor extends Model {
 		'especializacion',
 		'maestria',
 		'doctorado',
-		'email'
+		'email',
+		'programa_id'
 		];
+
+
+	public function programa()
+    {
+        return $this->belongsTo('App\Programa');
+    }
+
+    public function director()
+    {
+        return $this->hasOne('App\Director');
+    }
 
 	public function scopeProfesoresArray($query){
 

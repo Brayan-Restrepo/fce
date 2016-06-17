@@ -21,9 +21,7 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
             <!-- Optionally, you can add icons to the links -->
-            <li class=''><a href="{{ url('home')}}"><i class='fa fa-home'></i> <span>Inicio</span></a></li>  
-            <li class=''><a href="{{ url('home')}}"><i class='fa fa-user'></i> <span>Perfil</span></a></li>
-            
+            <li class=''><a href="{{ url('home')}}"><i class='fa fa-home'></i> <span>Inicio</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-graduation-cap'></i> <span> Trabajo de Grado</span></a>
                 <ul class="treeview-menu">
@@ -42,7 +40,27 @@
                         <a href="{{ url('gestionar/trabajo-de-grado')}}"><i class='fa  fa-group'></i> <span>Lista de Trabajos de Grados</span></a>
                     </li>
                 </ul>
+            </li>  
+            <li class=''><a href="{{ url('home')}}"><i class='fa fa-user'></i> <span>Perfil</span></a></li>
+            @if (Auth::user()->type == 'Admin')
+            <li class=''>
+                <a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user-plus'></i> <span>Asignar Decano</span></a>
             </li>
+            <li class=''>
+                <a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user-plus'></i> <span> Directores de Programa</span></a>
+            </li>
+            <li class="treeview">
+                <a href="#"><i class='fa fa-users'></i> <span> Secretaria</span></a>
+                <ul class="treeview-menu">
+                    <li class=''>
+                        <a href="{{ url('gestionar/secretaria')}}"><i class='fa  fa-group'></i> <span>Lista de Secretarias</span></a>
+                    </li>
+                    <li class=''>
+                        <a href="{{ url('gestionar/secretaria/create')}}"><i class='fa fa-user'></i> <span>Agregar Secretaria</span></a>
+                    </li>
+                </ul>
+            </li>
+            @endif
         @if ( Auth::user()->type == 'Decano' || Auth::user()->type == 'Secretaria' || Auth::user()->type == 'Admin')
             
             <li class="treeview">

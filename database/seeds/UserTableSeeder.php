@@ -89,5 +89,21 @@ use Illuminate\Database\Seeder;
 				'type' => 'Decano',
 				'password'=> \Hash::make('123456')
 			));
+
+			// ***************************
+			// Programas
+			// ***************************
+			DB::table('programa')->insert(array (
+				'id'=> 1,
+				'nombre' => 'Economia'
+			));
+			DB::table('programa')->insert(array (
+				'id'=> 2,
+				'nombre' => 'Mercadeo'
+			));
+			DB::table('programa')->insert(array (
+				'id'=> 3,
+				'nombre' => 'Contaduria'
+			));
     	}
 	}

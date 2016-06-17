@@ -32,11 +32,19 @@
 							@include('form.form-estudiante')						
 					@elseif(Session::get('formulario')=='Profesor')
 						@if(Session::get('editar')==True)
-							{!! Form::model($profesor, ['route' => ['gestionar.profesor.update', $profesor->celular], 'method'=>'PUT', 'class'=>'']) !!}
+							{!! Form::model($profesor, ['route' => ['gestionar.profesor.update', $profesor->id], 'method'=>'PUT', 'class'=>'']) !!}
 						@else
 							{!! Form::open(['route' => 'gestionar.profesor.store', 'method'=>'POST', 'class'=>'']) !!}
 						@endif	
 							@include('form.form-profesor')
+					@elseif(Session::get('formulario')=='Secretaria')
+						
+						@if(Session::get('editar')==True)
+							{!! Form::model($secretaria, ['route' => ['gestionar.secretaria.update', $secretaria->id], 'method'=>'PUT', 'class'=>'']) !!}
+						@else
+							{!! Form::open(['route' => 'gestionar.secretaria.store', 'method'=>'POST', 'class'=>'']) !!}	
+						@endif
+							@include('form.form-secretaria')
 					@elseif(Session::get('formulario')=='Trabajo de Grado')
 						@if(Session::get('editar')==True)
 							{!! Form::model($trabajo_de_grado, ['route' => ['gestionar.trabajo-de-grado.update', $trabajo_de_grado->id], 'method'=>'PUT', 'class'=>'']) !!}
