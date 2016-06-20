@@ -32,7 +32,7 @@ class TrabajoDeGradoController extends Controller {
 			$idPrograma = User::findOrFail($userID)->secretaria->programa_id;
 			$trabajo_de_grado = TrabajoDeGrado::where('programa_id',$idPrograma)->get();
 		}else if($userType == 'Director'){
-			$trabajo_de_grado = TrabajoDeGrado::where('programa_id',$idPrograma)->get();
+			$trabajo_de_grado = TrabajoDeGrado::all();
 		}else if($userType == 'Decano' || $userType == 'Admin'){
 			$trabajo_de_grado = TrabajoDeGrado::all();
 		}else if($userType == 'Docente'){

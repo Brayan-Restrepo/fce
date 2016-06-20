@@ -46,16 +46,12 @@
                     </li>
                 </ul>
             </li>  
-            <li class=''><a href="{{ url('home')}}"><i class='fa fa-user'></i> <span>Perfil</span></a></li>
             @if (Auth::user()->type == 'Admin' || Auth::user()->type == 'Decano')
                 @if (Auth::user()->type == 'Admin')
                 <li class=''>
                     <a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user-plus'></i> <span>Asignar Decano</span></a>
                 </li>
                 @endif
-            <li class=''>
-                <a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user-plus'></i> <span> Directores de Programa</span></a>
-            </li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-users'></i> <span> Secretaria</span></a>
                 <ul class="treeview-menu">
