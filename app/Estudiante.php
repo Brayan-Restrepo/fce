@@ -29,8 +29,14 @@ class Estudiante extends Model {
 		'direccion',
 		'barrio',
 		'celular',
-		'email'
+		'email',
+		'programa_id'
 		];
+
+	public function programa()
+    {
+        return $this->belongsTo('App\Programa');
+    }
 
 	public function scopeEstudiantesArray($query){
 

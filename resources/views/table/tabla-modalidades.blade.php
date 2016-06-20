@@ -7,7 +7,7 @@
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 		</div>
 	</div>
-	<div class="box-body form-horizontal">
+	<div class="box-body form-horizontal table-responsive">
 		<div class="row">
 			@if( Auth::user()->type == 'Admin' )
 			{!! Form::open(['route' => 'admin.modalidad.store', 'method'=>'POST', 'class'=>'']) !!}

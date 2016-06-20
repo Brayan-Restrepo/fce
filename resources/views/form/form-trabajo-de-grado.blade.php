@@ -1,3 +1,9 @@
+@if(Auth::user()->type == 'Secretaria')
+	{!! Form::text('programa_id', Auth::user()->secretaria->programa_id, ['class'=>'hidden']) !!}
+@elseif(Auth::user()->type == 'Docente')
+	{!! Form::text('programa_id', Auth::user()->profesores->programa_id, ['class'=>'hidden']) !!}
+@endif
+
 <div class="box box-solid box-primary">
 		<div class="box-header">
 			<h3 class="box-title">{{ Session::get('menu') }}</h3>

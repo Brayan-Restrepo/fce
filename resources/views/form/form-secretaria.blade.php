@@ -51,6 +51,10 @@
 				        {!! Form::label('apellido2', 'Segundo Apellido', ['class'=>'']) !!}    
 				        {!! Form::text('apellido2', null, ['class'=>'form-control', 'placeholder'=>"Segundo Apellido"]) !!}
 				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('password', 'Ingresa una Clave', ['class'=>'']) !!}    
+				        {!! Form::text('password', null, ['class'=>'form-control', 'placeholder'=>"Ingresa una Clave"]) !!}
+				    </div>
 				</div>
 		    </div>
 	    	<!-- Fin Info Basica -->

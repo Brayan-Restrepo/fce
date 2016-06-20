@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use App\Estudiante;
 use App\User;
+use App\Programa;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateEstudianteRequest;
 use Illuminate\Support\Facades\Session;
@@ -35,7 +36,8 @@ class EstudiantesController extends Controller {
 		Session::put('menu', 'Agregar Estudiante');
 		Session::put('formulario', 'Estudiante');
 		Session::put('editar', False);
-		return view('formularios');
+		$programasArray = Programa::ProgramasArray();
+		return view('formularios',compact('programasArray'));
 	}
 
 	/**
@@ -46,12 +48,10 @@ class EstudiantesController extends Controller {
 	public function store(CreateEstudianteRequest $request)
 	{
 			$estudiante = Estudiante::create($request->all());
-	        
-
 	        $data = [
 	        	'name'=> 	$estudiante->nombre1.' '.$estudiante->apellido1,
 	        	'email'=>	$estudiante->email,
-	        	'password'=>\Hash::make($estudiante->codigo)
+	        	'password'=>\Hash::make($request->password)
 	        	];
 			$rules = array(
 				'name' => 'required', 
@@ -88,7 +88,8 @@ class EstudiantesController extends Controller {
 		Session::put('formulario', 'Estudiante');
 		Session::put('editar', True);
 		$estudiante = Estudiante::findOrFail($id);
-		return view('formularios',compact('estudiante'));
+		$programasArray = Programa::ProgramasArray();
+		return view('formularios',compact('estudiante','programasArray'));
 
 	}
 

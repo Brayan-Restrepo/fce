@@ -10,6 +10,7 @@ use App\EstadosTG;
 use App\Modalidades;
 use App\Profesor;
 use App\Estudiante;
+use App\User;
 
 use App\Http\Requests\CreateTrabajoDeGradoRequest;
 use Illuminate\Support\Facades\Session;
@@ -24,7 +25,23 @@ class TrabajoDeGradoController extends Controller {
 	 */
 	public function index()
 	{
-		$trabajo_de_grado = TrabajoDeGrado::all();
+		$userID = Session::get('UserID');
+		$userType = Session::get('UserType');
+		$trabajo_de_grado;
+		if ($userType == 'Secretaria') {
+			$idPrograma = User::findOrFail($userID)->secretaria->programa_id;
+			$trabajo_de_grado = TrabajoDeGrado::where('programa_id',$idPrograma)->get();
+		}else if($userType == 'Director'){
+			$trabajo_de_grado = TrabajoDeGrado::where('programa_id',$idPrograma)->get();
+		}else if($userType == 'Decano' || $userType == 'Admin'){
+			$trabajo_de_grado = TrabajoDeGrado::all();
+		}else if($userType == 'Docente'){
+			dd('Docente');
+		}else if($userType == 'Estudiante'){
+			dd('Estudiante');
+		}
+		//dd($idPrograma);
+		
 		Session::put('menu', 'Lista de Trabajos de Grados');
 		return view('table',compact('trabajo_de_grado'));
 	}
@@ -35,11 +52,10 @@ class TrabajoDeGradoController extends Controller {
 	 * @return Response
 	 */
 	public function create()
-	{
+	{	
 		Session::put('menu', 'Nuevo Trabajo de Grado');
 		Session::put('formulario', 'Trabajo de Grado');
 		Session::put('editar', False);
-
 		$profesoresArray = Profesor::profesoresArray();
 		$estudiantesArray = Estudiante::estudiantesArray();
 		$modalidadesArray = Modalidades::modalidadesArray();

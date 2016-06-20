@@ -7,7 +7,7 @@
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 		</div>
 	</div>
-	<div class="box-body form-horizontal">
+	<div class="box-body form-horizontal table-responsive">
 		<table class='table table-hover'>
 		    <tr>
 		        <th>ID</th>

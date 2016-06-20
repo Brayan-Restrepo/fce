@@ -7,7 +7,7 @@
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 		</div>
 	</div>
-	<div class="box-body form-horizontal">
+	<div class="box-body form-horizontal table-responsive">
 		<table class='table table-hover'>
 		    <tr>
 		        <th>ID</th>
@@ -23,7 +23,7 @@
 				<th>Radicado</th>
 				<th>Acta de Sustentacion</th>
 				<th>Fecha de Sustentacion</th>
-		    	@if(Auth::user()->type == 'Admin' || Auth::user()->type == 'Director')
+		    	@if(Auth::user()->type == 'Admin' || Auth::user()->type == 'Director' || Auth::user()->type == 'Decano')
 		    	<th>Editar</th>
 		    	<th>Proceso</th>
 		    	@endif
@@ -43,7 +43,7 @@
 					<td>{{ $trabajoG->radicado }}</td>
 					<td>{{ $trabajoG->actaSustentacion }}</td>
 					<td>{{ $trabajoG->fechaSustentacion }}</td>
-					@if(Auth::user()->type == 'Admin' || Auth::user()->type == 'Director')
+					@if(Auth::user()->type == 'Admin' || Auth::user()->type == 'Director' || Auth::user()->type == 'Decano')
 					<td>
 		                <a class='btn btn-success' href="{{ route('gestionar.trabajo-de-grado.edit',$trabajoG->id) }}">Editar</a>
 		            </td>

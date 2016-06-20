@@ -38,4 +38,6 @@ Route::group(['prefix'=>'admin','middleware'=>['auth'], 'namespace'=>'Admin'], f
 	Route::resource('modalidad','ModalidadController');
 	Route::resource('estado','EstadoController');
 });
+
+
 Route::get('proceso-trabajo-de-grado/{idTG}',['as'=>'gestionar.proceso-trabajo-de-grado.lista','uses'=>'Gestionar\ProcesoTGController@lista']);

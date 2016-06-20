@@ -17,10 +17,19 @@ class Programa extends Model {
 		'nombre'
 		];
 
+	public function trabajoDeGrado()
+    {
+        return $this->hasOne('App\TrabajoDeGrado');
+    }
 
 	public function secretaria()
     {
         return $this->hasOne('App\Secretaria');
+    }
+
+    public function estudiante()
+    {
+        return $this->hasOne('App\Estudiate');
     }
 
     public function profesor()

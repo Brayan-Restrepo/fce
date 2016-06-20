@@ -1,4 +1,4 @@
-@if ( Auth::user()->type != 'Estudiante' && Auth::user()->type != 'Docente')
+
 	@extends('app')
 
 	@section('htmlheader_title')
@@ -61,4 +61,4 @@
 		</div>
 	</div>
 	@endsection
-@endif
+

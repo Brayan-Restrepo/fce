@@ -52,7 +52,7 @@ class ProfesoresController extends Controller {
 	        	'name'=> 	$profesor->nombre1.' '.$profesor->apellido1,
 	        	'email'=>	$profesor->email,
 	        	'type'=>	'Docente',
-	        	'password'=>\Hash::make($profesor->identificacion)
+	        	'password'=>\Hash::make($request->password)
 	        	];
 			$rules = array(
 				'name' => 'required', 

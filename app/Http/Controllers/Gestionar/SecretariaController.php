@@ -52,7 +52,7 @@ class SecretariaController extends Controller {
 	        	'name'=> 	$request->nombre1.' '.$request->apellido1,
 	        	'email'=>	$request->email,
 	        	'type'=>	'Secretaria',
-	        	'password'=>\Hash::make($request->identificacion)
+	        	'password'=>\Hash::make($request->password)
 	        	];
 			$rulesUser = array(
 				'name' => 'required', 

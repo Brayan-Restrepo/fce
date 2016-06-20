@@ -30,11 +30,17 @@ class TrabajoDeGrado extends Model {
 		'jurado2',
 		'estado',
 		'actaSustentacion',
-		'fechaSustentacion'
+		'fechaSustentacion',
+		'programa_id'
 		];
 
 		public function procesoTG(){
     		return $this->hasMany('App\ProcesoTG');
 	   	}
+
+	   	public function programa()
+    {
+        return $this->belongsTo('App\Programa');
+    }
 
 }
