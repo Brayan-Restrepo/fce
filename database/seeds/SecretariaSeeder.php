@@ -14,7 +14,7 @@ use Faker\Factory as Faker;
 			$email = $faker->unique()->email;
 			
 			$id = DB::table('users')->insertGetId(array (
-				'name'=> $nombre1+' '+$apellido1,
+				'name'=> $nombre1.' '.$apellido1,
 				'email' => $email,
 				'type' => 'Secretaria',
 				'password'=> \Hash::make('123456')

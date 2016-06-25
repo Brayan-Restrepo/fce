@@ -30,7 +30,8 @@ class Profesor extends Model {
 		'maestria',
 		'doctorado',
 		'email',
-		'programa_id'
+		'programa_id',
+		'user_id'
 		];
 
 
@@ -42,6 +43,11 @@ class Profesor extends Model {
     public function director()
     {
         return $this->hasOne('App\Director');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 
 	public function scopeProfesoresArray($query){

@@ -20,7 +20,8 @@ class EstudiantesController extends Controller {
 	
 	public function index()
 	{
-		$estudiante = Estudiante::all();
+		$userPrograma = Session::get('UserPrograma');
+		$estudiante = Estudiante::where('programa_id',$userPrograma)->get();
 		Session::put('menu', 'Estudiantes');
 		return view('table',compact('estudiante'));	
 	}
@@ -46,23 +47,41 @@ class EstudiantesController extends Controller {
 	 * @return Response
 	 */
 	public function store(CreateEstudianteRequest $request)
-	{
-			$estudiante = Estudiante::create($request->all());
-	        $data = [
-	        	'name'=> 	$estudiante->nombre1.' '.$estudiante->apellido1,
-	        	'email'=>	$estudiante->email,
-	        	'password'=>\Hash::make($request->password)
-	        	];
-			$rules = array(
-				'name' => 'required', 
-				'email' => 'required', 
-				'password' => 'required'
-			);
-	        $validador = Validator::make($data, $rules);
-	        
-			$user = User::create($data);
+	{	
+		$dataUser = [
+        	'name'=> 	$request->nombre1.' '.$request->apellido1,
+        	'email'=>	$request->email,
+        	'type'=>	'Estudiante',
+        	'password'=>\Hash::make($request->password)
+        	];
+		$rulesUser = array(
+			'name' => 'required', 
+			'email' => 'required', 
+			'password' => 'required',
+			'type' => 'required'
+		);
+        
+        $validador = Validator::make($dataUser, $rulesUser);
+       	$user = User::create($dataUser);
+       	
+       	$dataEstudiante = [
+			'codigo'			=>	$request->codigo,
+			'identificacion'	=>	$request->identificacion,
+			'apellido1'			=>	$request->apellido1,
+			'apellido2'			=>	$request->apellido2,
+			'nombre1'			=>	$request->nombre1,
+			'nombre2'			=>	$request->nombre2,
+			'fechaNac'			=>	$request->fechaNac,
+			'direccion'			=>	$request->direccion,
+			'barrio'			=>	$request->barrio,
+			'celular'			=>	$request->celular,
+			'email'				=>	$request->email,
+			'programa_id'		=>	$request->programa_id,
+			'user_id'			=>	$user->id
+			];
+		Estudiante::create($dataEstudiante);
 
-			return redirect()->to('gestionar/estudiante');
+		return redirect()->to('gestionar/estudiante');
 	}
 
 	/**
@@ -104,8 +123,17 @@ class EstudiantesController extends Controller {
 		$estudiante = Estudiante::findOrFail($id);
 		$estudiante->fill($request->all());
 		$estudiante->save();
-		//return redirect()->back();
-		//return view('home');
+		$dataUser = array();
+		$dataUser = [
+        	'name'=> 	$request->nombre1.' '.$request->apellido1,
+        	'email'=>	$request->email
+        	];
+    	if($request->password != ''){
+			$dataUser['password'] = \Hash::make($request->password);
+		}
+		$user = User::findOrFail($estudiante->user_id);
+		$user->fill($dataUser);
+		$user->save();
 		return redirect()->to('gestionar/estudiante');
 	}
 

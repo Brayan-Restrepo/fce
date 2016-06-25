@@ -30,12 +30,18 @@ class Estudiante extends Model {
 		'barrio',
 		'celular',
 		'email',
-		'programa_id'
+		'programa_id',
+		'user_id'
 		];
 
 	public function programa()
     {
         return $this->belongsTo('App\Programa');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 
 	public function scopeEstudiantesArray($query){
@@ -44,9 +50,9 @@ class Estudiante extends Model {
 		$estudiantesArray = array();
 		$estudiantesArray['']='';
 		foreach ($estudiantes as $estudiante) {
-			//$nombreEstudiante = $estudiante->codigo.' - '.$estudiante->nombre1.' '.$estudiante->nombre2.' '.$estudiante->apellido1.' '.$estudiante->apellido2;
+			$nombreEstudiante = $estudiante->codigo.' - '.$estudiante->nombre1.' '.$estudiante->nombre2.' '.$estudiante->apellido1.' '.$estudiante->apellido2;
 			//$estudiantesArray[$estudiante->id] = $nombreEstudiante;
-			$nombreEstudiante = $estudiante->nombre1;
+			//$nombreEstudiante = $estudiante->nombre1;
 			$estudiantesArray[$nombreEstudiante] = $nombreEstudiante;
 		}
 		

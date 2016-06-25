@@ -1,4 +1,4 @@
-
+ 
 <div class='box box-primary box-solid'>
 	<div class="box-header">
 		<h3 class="box-title">{{ Session::get('menu') }}</h3>
@@ -8,17 +8,20 @@
 		</div>
 	</div>
 	<div class="box-body form-horizontal">
-		<table class='table table-hover'>
-		    <tr>
-		        <th>ID</th>
-				<th>Identificacion</th>				
-				<th>Nombres</th>
-				<th>Apellidos</th>
-				<th>Celular</th>
-				<th>Fecha Nacimiento</th>
-				<th>Programa</th>
-				<th>Editar</th>
-		    </tr>
+		<table id="tabla-secretaria" class='table table-bordered table-striped'>
+		    <thead>
+			    <tr>
+			        <th>ID</th>
+					<th>Identificacion</th>				
+					<th>Nombres</th>
+					<th>Apellidos</th>
+					<th>Celular</th>
+					<th>Fecha Nacimiento</th>
+					<th>Programa</th>
+					<th>Editar</th>
+			    </tr>
+			</thead>
+			<tbody>
 		    @foreach ($secretarias as $secretaria)
 				<tr>
 					<td>{{ $secretaria->id }}</td>
@@ -33,6 +36,19 @@
 		            </td>
 				</tr>
 		    @endforeach
+		    </tbody>
+		    <tfoot>
+			    <tr>
+			        <th>ID</th>
+					<th>Identificacion</th>				
+					<th>Nombres</th>
+					<th>Apellidos</th>
+					<th>Celular</th>
+					<th>Fecha Nacimiento</th>
+					<th>Programa</th>
+					<th>Editar</th>
+			    </tr>
+			</tfoot>
 		</table>
 	</div>
 </div>	

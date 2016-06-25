@@ -1,4 +1,9 @@
+<!-- Elementos Ocultos -->
+@if(Auth::user()->type == 'Secretaria')
+    {!! Form::text('programa_id', Auth::user()->secretaria->programa_id, ['class'=>'hidden']) !!}
+@elseif(Auth::user()->type == 'Secretaria')
 
+@endif
 	<div class="box box-solid box-primary">
 		<div class="box-header">
 			<h3 class="box-title">{{ Session::get('menu') }}</h3>
@@ -11,31 +16,27 @@
 			<div class="row">
 
 				<div class='col-lg-6'>
-					   	<div class="form-group col-lg-6" style="padding-left: 0px;">
-					        {!! Form::label('codigo', 'Codigo', ['class'=>'']) !!}
-					        {!! Form::text('codigo', null, ['class'=>'form-control', 'placeholder'=>"Codigo"]) !!}
-					    </div>			    
-					    <div class="form-group col-lg-6" style='padding-left: 0px;'>
-					        {!! Form::label('identificacion', 'Identificacion', ['class'=>'']) !!}
-					        {!! Form::text('identificacion', null, ['class'=>'form-control', 'placeholder'=>"Identificacion"]) !!}
-					    </div>
-					    
-					    <div class="form-group col-lg-6" style="padding-left: 0px;">
-					        {!! Form::label('direccion', 'Dirección', ['class'=>'']) !!}    
-					        {!! Form::text('direccion', null, ['class'=>'form-control', 'placeholder'=>"Dirección"]) !!}
-					    </div>
-					    <div class="form-group col-lg-6" style="padding-left: 0px;">
-					        {!! Form::label('barrio', 'Barrio', ['class'=>'']) !!}
-					        {!! Form::text('barrio', null, ['class'=>'form-control', 'placeholder'=>"Barrio"]) !!}
-					        
-					    </div>
-					    <div class="form-group col-lg-12" style="padding-left: 0px;">
-					        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
-					        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
-					    </div>
+				   	<div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('codigo', 'Codigo', ['class'=>'']) !!}
+				        {!! Form::text('codigo', null, ['class'=>'form-control', 'placeholder'=>"Codigo"]) !!}
+				    </div>			    
+				    <div class="form-group col-lg-6" style='padding-left: 0px;'>
+				        {!! Form::label('identificacion', 'Identificacion', ['class'=>'']) !!}
+				        {!! Form::text('identificacion', null, ['class'=>'form-control', 'placeholder'=>"Identificacion"]) !!}
+				    </div>
+				    
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
-				        {!! Form::label('programa_id', 'Seleccione un Programa', ['class'=>'']) !!}    
-				        {!! Form::select('programa_id',$programasArray, null, ['class'=>'form-control', 'placeholder'=>"Seleccione un Programa"]) !!}
+				        {!! Form::label('direccion', 'Dirección', ['class'=>'']) !!}    
+				        {!! Form::text('direccion', null, ['class'=>'form-control', 'placeholder'=>"Dirección"]) !!}
+				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('barrio', 'Barrio', ['class'=>'']) !!}
+				        {!! Form::text('barrio', null, ['class'=>'form-control', 'placeholder'=>"Barrio"]) !!}
+				        
+				    </div>
+				    <div class="form-group col-lg-6" style="padding-left: 0px;">
+				        {!! Form::label('email', 'Email', ['class'=>'']) !!}    
+				        {!! Form::text('email', null, ['class'=>'form-control', 'placeholder'=>"Email"]) !!}
 				    </div>
 				    <div class="form-group col-lg-6" style="padding-left: 0px;">
 				        {!! Form::label('password', 'Ingresa una Clave', ['class'=>'']) !!}    

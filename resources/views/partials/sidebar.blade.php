@@ -5,6 +5,11 @@
     <section class="sidebar">
         {{ Session::put('UserID',Auth::user()->id) }}
         {{ Session::put('UserType',Auth::user()->type) }}
+        @if(Auth::user()->type == 'Secretaria')
+            {{ Session::put('UserPrograma',Auth::user()->secretaria->programa_id) }}
+        @else
+        
+        @endif
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">

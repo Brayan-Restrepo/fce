@@ -27,6 +27,8 @@ class CreateProfesorTable extends Migration {
 			$table -> char('maestria');
 			$table -> char('doctorado');
 			$table -> string('email');
+			$table->integer('user_id')->unsigned();
+		    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}

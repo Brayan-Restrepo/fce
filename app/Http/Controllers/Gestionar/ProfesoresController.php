@@ -20,7 +20,8 @@ class ProfesoresController extends Controller {
 	 */
 	public function index()
 	{
-		$profesores = Profesor::all();
+		$userPrograma = Session::get('UserPrograma');
+		$profesores = Profesor::where('programa_id',$userPrograma)->get();
 		Session::put('menu', 'Profesores');
 		return view('table',compact('profesores'));	
 	}
@@ -46,25 +47,41 @@ class ProfesoresController extends Controller {
 	 */
 	public function store(CreateProfesorRequest $request)
 	{
-			$profesor = Profesor::create($request->all());
 
-			$data = [
-	        	'name'=> 	$profesor->nombre1.' '.$profesor->apellido1,
-	        	'email'=>	$profesor->email,
-	        	'type'=>	'Docente',
-	        	'password'=>\Hash::make($request->password)
-	        	];
-			$rules = array(
-				'name' => 'required', 
-				'email' => 'required', 
-				'password' => 'required',
-				'type' => 'required'
-			);
-	        $validador = Validator::make($data, $rules);
-	        
-			$user = User::create($data);
+		$dataUser = [
+        	'name'=> 	$request->nombre1.' '.$request->apellido1,
+        	'email'=>	$request->email,
+        	'type'=>	'Docente',
+        	'password'=>\Hash::make($request->password)
+        	];
+		$rulesUser = array(
+			'name' => 'required', 
+			'email' => 'required', 
+			'password' => 'required',
+			'type' => 'required'
+		);
+        $validador = Validator::make($dataUser, $rulesUser);   
+		$user = User::create($dataUser);
 
-			return redirect()->to('gestionar/profesor');
+		$dataProfesor = [
+			'identificacion'	=>	$request->identificacion,
+			'apellido1'			=>	$request->apellido1,
+			'apellido2'			=>	$request->apellido2,
+			'nombre1'			=>	$request->nombre1,
+			'nombre2'			=>	$request->nombre2,
+			'celular'			=>	$request->celular,
+			'fechaNac'			=>	$request->fechaNac,
+			'pregrado'			=>	$request->pregrado,
+			'especializacion'	=>	$request->especializacion,
+			'maestria'			=>	$request->maestria,
+			'doctorado'			=>	$request->doctorado,
+			'email'				=>	$request->email,
+			'programa_id'		=>	$request->programa_id,
+			'user_id'			=>	$user->id
+		];
+
+		Profesor::create($dataProfesor);
+		return redirect()->to('gestionar/profesor');
 	}
 
 	/**
@@ -105,8 +122,17 @@ class ProfesoresController extends Controller {
 		$profesor = Profesor::findOrFail($id);
 		$profesor->fill($request->all());
 		$profesor->save();
-		//return redirect()->back();
-		//return view('home');
+		$dataUser = array();
+		$dataUser = [
+        	'name'=> 	$request->nombre1.' '.$request->apellido1,
+        	'email'=>	$request->email
+        	];
+    	if($request->password != ''){
+			$dataUser['password'] = \Hash::make($request->password);
+		}
+		$user = User::findOrFail($profesor->user_id);
+		$user->fill($dataUser);
+		$user->save();
 		return redirect()->to('gestionar/profesor');
 	}
 

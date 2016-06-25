@@ -8,7 +8,8 @@
 		</div>
 	</div>
 	<div class="box-body form-horizontal table-responsive">
-		<table class='table table-hover'>
+		<table id="tabla-tg" class='table table-bordered table-striped'>
+		    <thead>
 		    <tr>
 		        <th>ID</th>
 				<th>Fecha</th>				
@@ -28,6 +29,8 @@
 		    	<th>Proceso</th>
 		    	@endif
 		    </tr>
+		    </thead>
+		    <tbody>
 		    @foreach ($trabajo_de_grado as $trabajoG)
 				<tr>
 					<td>{{ $trabajoG->id }}</td>
@@ -53,6 +56,7 @@
 		            @endif		            
 				</tr>
 		    @endforeach
+		    </tbody>
 		</table>
 	</div>
 </div>

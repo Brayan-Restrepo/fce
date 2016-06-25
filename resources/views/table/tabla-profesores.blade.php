@@ -8,12 +8,14 @@
 		</div>
 	</div>
 	<div class="box-body form-horizontal table-responsive">
-		<table class='table table-hover'>
+		<table id="tabla-docente" class='table table-bordered table-striped'>
+		    <thead>
 		    <tr>
 		        <th>ID</th>
 				<th>Identificacion</th>				
 				<th>Nombres</th>
 				<th>Apellidos</th>
+				<th>Email</th>
 				<th>Celular</th>
 				<th>Fecha Nacimiento</th>
 				<th>Pregrado</th>
@@ -23,12 +25,15 @@
 				<th>Programa</th>
 				<th>Editar</th>
 		    </tr>
+		    </thead>
+		    <tbody>
 		    @foreach ($profesores as $profesor)
 				<tr>
 					<td>{{ $profesor->id }}</td>
 					<td>{{ $profesor->identificacion }}</td>
 					<td>{{ $profesor->nombre1 }} {{ $profesor->nombre2 }}</td>
 					<td>{{ $profesor->apellido1 }} {{ $profesor->apellido2 }}</td>
+					<td>{{ $profesor->email }}</td>
 					<td>{{ $profesor->celular }}</td>
 					<td>{{ $profesor->fechaNac }}</td>
 					<td>{{ $profesor->pregrado }}</td>
@@ -41,6 +46,7 @@
 		            </td>
 				</tr>
 		    @endforeach
+		    </tbody>
 		</table>
 	</div>
 </div>	
