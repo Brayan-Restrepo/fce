@@ -52,7 +52,7 @@
                 </ul>
             </li>  
             @if (Auth::user()->type == 'Admin' || Auth::user()->type == 'Decano')
-                @if (Auth::user()->type == 'Admin')
+                @if (Auth::user()->type == '')
                 <li class=''>
                     <a href="{{ url('gestionar/estudiante/create')}}"><i class='fa fa-user-plus'></i> <span>Asignar Decano</span></a>
                 </li>

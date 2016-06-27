@@ -17,26 +17,26 @@
 				<div class='col-lg-6'>
 					<div class='form-group col-lg-12' style="padding-left: 0px;">
 				        {!! Form::label('titulo', 'Titulo', ['class'=>'']) !!}
-				        {!! Form::text('titulo', null, ['class'=>'form-control', 'placeholder'=>"Titulo"]) !!}
+				        {!! Form::text('titulo', null, ['class'=>'form-control', 'placeholder'=>"Titulo",'required']) !!}
 				    </div>
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('jurado1', 'Primer Jurado', ['class'=>'']) !!}
-				        {!! Form::select('jurado1',$profesoresArray, null, ['class'=>'form-control selectpicker','id'=>'jurado1', 'data-live-search'=>'true']) !!}
+				        {!! Form::select('jurado1',$profesoresArray, null, ['class'=>'form-control selectpicker show-tick','id'=>'jurado1', 'data-live-search'=>'true','required']) !!}
 				        
 				    </div>
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('jurado2', 'Segundo Jurado', ['class'=>'']) !!}    
-				        {!! Form::select('jurado2',$profesoresArray, null, ['class'=>'form-control selectpicker', 'data-live-search'=>'true']) !!}
+				        {!! Form::select('jurado2',$profesoresArray, null, ['class'=>'form-control selectpicker show-tick', 'data-live-search'=>'true']) !!}
 				    </div>
 				    
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('director', 'Director', ['class'=>'']) !!}    
-				        {!! Form::select('director',$profesoresArray, null, ['class'=>'form-control selectpicker', 'data-live-search'=>'true']) !!}
+				        {!! Form::select('director',$profesoresArray, null, ['class'=>'form-control selectpicker show-tick', 'data-live-search'=>'true','required']) !!}
 				    </div>
 				   				    
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('estado', 'Estado', ['class'=>'']) !!}    
-				        {!! Form::select('estado',$estadosArray, null, ['class'=>'form-control selectpicker', 'data-live-search'=>'true']) !!}
+				        {!! Form::select('estado',$estadosArray, null, ['class'=>'form-control selectpicker show-tick', 'data-live-search'=>'true']) !!}
 				    </div>
 				   
 				</div>
@@ -51,15 +51,15 @@
 				    </div>		
 					<div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('estudiante1', 'Primer Estudiante', ['class'=>'']) !!}    
-				        {!! Form::select('estudiante1',$estudiantesArray, null, ['class'=>'form-control selectpicker', 'data-live-search'=>'true']) !!}
+				        {!! Form::select('estudiante1',$estudiantesArray, null, ['class'=>'form-control selectpicker show-tick', 'data-live-search'=>'true','required']) !!}
 				    </div>
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('estudiante2', 'Segundo Estudiante', ['class'=>'']) !!}    
-				        {!! Form::select('estudiante2',$estudiantesArray, null, ['class'=>'form-control selectpicker', 'data-live-search'=>'true']) !!}
+				        {!! Form::select('estudiante2',$estudiantesArray, null, ['class'=>'form-control selectpicker show-tick', 'data-live-search'=>'true']) !!}
 				    </div>
 				    <div class="form-group col-lg-12" style="padding-left: 0px;">
 				        {!! Form::label('modalidadGrado', 'Modalidad de Grado', ['class'=>'']) !!}
-				        {!! Form::select('modalidadGrado',$modalidadesArray, null, ['class'=>'form-control selectpicker', 'data-live-search'=>'true']) !!}        
+				        {!! Form::select('modalidadGrado',$modalidadesArray, null, ['class'=>'form-control selectpicker show-tick', 'data-live-search'=>'true']) !!}        
 				    </div>
 
 				     <div class="form-group col-lg-6" style="padding-left: 0px;">

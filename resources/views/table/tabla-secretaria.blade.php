@@ -15,6 +15,7 @@
 					<th>Identificacion</th>				
 					<th>Nombres</th>
 					<th>Apellidos</th>
+					<th>Email</th>
 					<th>Celular</th>
 					<th>Fecha Nacimiento</th>
 					<th>Programa</th>
@@ -28,6 +29,7 @@
 					<td>{{ $secretaria->identificacion }}</td>
 					<td>{{ $secretaria->nombre1 }} {{ $secretaria->nombre2 }}</td>
 					<td>{{ $secretaria->apellido1 }} {{ $secretaria->apellido2 }}</td>
+					<td>{{ $secretaria->email}}</td>
 					<td>{{ $secretaria->celular }}</td>
 					<td>{{ $secretaria->fechaNac }}</td>
 					<td> {{ $secretaria->programa->nombre }} </td>

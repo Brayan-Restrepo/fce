@@ -21,7 +21,11 @@ class ProfesoresController extends Controller {
 	public function index()
 	{
 		$userPrograma = Session::get('UserPrograma');
-		$profesores = Profesor::where('programa_id',$userPrograma)->get();
+		if($userPrograma == null){
+			$profesores = Profesor::all();
+		}else{
+			$profesores = Profesor::where('programa_id',$userPrograma)->get();
+		}
 		Session::put('menu', 'Profesores');
 		return view('table',compact('profesores'));	
 	}

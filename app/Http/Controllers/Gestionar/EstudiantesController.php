@@ -21,7 +21,11 @@ class EstudiantesController extends Controller {
 	public function index()
 	{
 		$userPrograma = Session::get('UserPrograma');
-		$estudiante = Estudiante::where('programa_id',$userPrograma)->get();
+		if($userPrograma == null){
+			$estudiante = Estudiante::all();
+		}else{
+			$estudiante = Estudiante::where('programa_id',$userPrograma)->get();
+		}
 		Session::put('menu', 'Estudiantes');
 		return view('table',compact('estudiante'));	
 	}

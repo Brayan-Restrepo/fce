@@ -46,7 +46,7 @@ class Programa extends Model {
 		
 		$programas = Programa::all();
 		$programasArray = array();
-		$programasArray['']='----';
+		$programasArray['']='';
 		foreach ($programas as $programa) {
 			//$modalidadesArray[$modalidad->id]=$modalidad->descripcion;
 			$programasArray[$programa->id]=$programa->nombre;
