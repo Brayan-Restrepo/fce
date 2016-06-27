@@ -15,7 +15,7 @@ use Faker\Factory as Faker;
 				$id = DB::table('users')->insertGetId(array (
 					'name'=> $nombre1.' '.$apellido1,
 					'email' => $email,
-					'type' => 'Secretaria',
+					'type' => 'Estudiante',
 					'password'=> \Hash::make('123456')
 				));  
 				DB::table('estudiantes')->insert(array (
@@ -30,7 +30,7 @@ use Faker\Factory as Faker;
 				'barrio'		=>	$faker->city,
 				'celular'		=>	$faker->e164PhoneNumber,
 				'email'			=>	$email,
-				'programa_id' 	=>  $faker->numberBetween($min = 1, $max = 3) ,
+				'programa_id' 	=>  $faker->numberBetween($min = 1, $max = 3),
 				'user_id'		=> 	$id
 			));
 			}
