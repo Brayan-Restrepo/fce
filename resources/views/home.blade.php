@@ -7,7 +7,7 @@
 		<div class="col-md-5 col-lg-offset-1">
 			@include('table.tabla-estadostg')
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-5">
 			@include('table.tabla-modalidades')
 		</div>
 		

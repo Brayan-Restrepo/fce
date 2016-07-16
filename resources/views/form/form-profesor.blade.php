@@ -3,9 +3,7 @@
 @elseif(Auth::user()->type == 'Secretaria')
 
 @endif
-<div class="callout callout-danger lead hidden" id='mesaje-clave'>
-    La contraseña no coincide.
-</div>
+
 	<div class="box box-solid box-primary">
 		<div class="box-header">
 			<h3 class="box-title">{{ Session::get('menu') }}</h3>

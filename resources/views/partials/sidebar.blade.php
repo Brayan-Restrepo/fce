@@ -7,8 +7,8 @@
         {{ Session::put('UserType',Auth::user()->type) }}
         @if(Auth::user()->type == 'Secretaria')
             {{ Session::put('UserPrograma',Auth::user()->secretaria->programa_id) }}
-        @else
-        
+        @elseif(Auth::user()->type == 'Admin')
+            {{ Session::put('UserPrograma', null ) }}
         @endif
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
