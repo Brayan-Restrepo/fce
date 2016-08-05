@@ -24,6 +24,7 @@
 				<th>Doctorado</th>
 				<th>Programa</th>
 				<th>Editar</th>
+				<th>Eliminar</th>
 		    </tr>
 		    </thead>
 		    <tbody>
@@ -43,6 +44,11 @@
 					<td>{{ $profesor->programa->nombre }}</td>
 		            <td>
 		                <a class='btn btn-success' href="{{ route('gestionar.profesor.edit',$profesor->id) }}">Editar</a>
+		            </td>
+		            <td>
+			            {!! Form::open(['route' => ['gestionar.profesor.destroy', $profesor->id], 'method'=>'DELETE', 'class'=>'', 'id'=>'delete_profesor']) !!}
+			            	<button type="submit" class="btn btn-danger">Eliminar</button>
+		                {!! Form::close() !!}
 		            </td>
 				</tr>
 		    @endforeach

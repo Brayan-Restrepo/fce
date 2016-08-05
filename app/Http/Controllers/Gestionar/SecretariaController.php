@@ -133,7 +133,10 @@ class SecretariaController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$secretaria = Secretaria::findOrFail($id);
+		$secretaria->User->delete();
+		$secretaria->delete();
+		return redirect()->back();
 	}
 
 }

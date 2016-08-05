@@ -21,6 +21,7 @@
 					<th>Celular</th>
 					<th>Emai</th>
 					<th>Editar</th>
+					<th>Eliminar</th>
 			    </tr>
 		    </thead>
 		    <tbody>
@@ -38,6 +39,11 @@
 		            <td>
 		                <a class='btn btn-success' href="{{ route('gestionar.estudiante.edit',$estudiantes->id) }}">Editar</a>
 		            </td>
+		            <td>
+			            {!! Form::open(['route' => ['gestionar.estudiante.destroy', $estudiantes->id], 'method'=>'DELETE', 'class'=>'', 'id'=>'delete_estudiante']) !!}
+			            	<button type="submit" class="btn btn-danger">Eliminar</button>
+		                {!! Form::close() !!}
+		            </td>
 				</tr>
 		    @endforeach
 		    </tbody>
@@ -53,6 +59,8 @@
 					<th>Celular</th>
 					<th>Emai</th>
 					<th>Editar</th>
+					<th>Eliminar</th>
+
 			    </tr>
 		    </tfoot>
 		</table>

@@ -17,7 +17,8 @@ class CrearProgramasTabla extends Migration {
 			$table -> char('nombre');
 			$table -> timestamps();
 
-		});	}
+		});	
+	}
 
 	/**
 	 * Reverse the migrations.

@@ -53,11 +53,12 @@ class TrabajoDeGradoController extends Controller {
 	 */
 	public function create()
 	{	
+		$idPrograma = Session::get('UserPrograma');
 		Session::put('menu', 'Nuevo Trabajo de Grado');
 		Session::put('formulario', 'Trabajo de Grado');
 		Session::put('editar', False);
-		$profesoresArray = Profesor::profesoresArray();
-		$estudiantesArray = Estudiante::estudiantesArray();
+		$profesoresArray = Profesor::profesoresArray($idPrograma);
+		$estudiantesArray = Estudiante::estudiantesArray($idPrograma);
 		$modalidadesArray = Modalidades::modalidadesArray();
 		$estadosArray = EstadosTG::estadosArray();
 		return view('formularios',compact('profesoresArray','estudiantesArray','modalidadesArray','estadosArray'));

@@ -7,7 +7,7 @@
 			<button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 		</div>
 	</div>
-	<div class="box-body form-horizontal table-responsive">
+	<div class="box-body table-responsive">
 		<table id="tabla-tg" class='table table-bordered table-striped'>
 		    <thead>
 		    <tr>
@@ -51,7 +51,7 @@
 		                <a class='btn btn-success' href="{{ route('gestionar.trabajo-de-grado.edit',$trabajoG->id) }}">Editar</a>
 		            </td>
 		            <td>
-		            	<a class='btn btn-success' href="{{ route('gestionar.proceso-trabajo-de-grado.lista',$trabajoG->id) }}">Add</a>
+		            	<a class='btn btn-primary' href="{{ route('gestionar.proceso-trabajo-de-grado.lista',$trabajoG->id) }}">Add</a>
 		            </td>
 		            @endif		            
 				</tr>

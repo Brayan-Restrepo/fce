@@ -83,6 +83,9 @@
 				</div>
 			@else
 				<div class="well">
+					<span class="label label-success pull-right">
+						{{ $proceso->updated_at }}
+					</span>
 					<p>{{ $proceso->decision }}</p>
 				</div>
 			@endif

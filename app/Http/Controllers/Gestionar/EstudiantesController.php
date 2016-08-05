@@ -149,7 +149,10 @@ class EstudiantesController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$estudiante = Estudiante::findOrFail($id);
+		$estudiante->User->delete();
+		$estudiante->delete();
+		return redirect()->back();
 	}
 
 }

@@ -148,7 +148,10 @@ class ProfesoresController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$profesor = Profesor::findOrFail($id);
+		$profesor->User->delete();
+		$profesor->delete();
+		return redirect()->back();
 	}
 
 }

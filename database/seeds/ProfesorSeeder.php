@@ -16,7 +16,7 @@ use Faker\Factory as Faker;
 			$id = DB::table('users')->insertGetId(array (
 				'name'=> $nombre1.' '.$apellido1,
 				'email' => $email,
-				'type' => 'Secretaria',
+				'type' => 'Docente',
 				'password'=> \Hash::make('123456')
 			));
 

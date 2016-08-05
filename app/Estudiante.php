@@ -44,9 +44,9 @@ class Estudiante extends Model {
         return $this->belongsTo('App\User');
     }
 
-	public function scopeEstudiantesArray($query){
+	public function scopeEstudiantesArray($query, $idPrograma){
 
-		$estudiantes = Estudiante::all();
+		$estudiantes = Estudiante::where('programa_id',$idPrograma)->get();
 		$estudiantesArray = array();
 		$estudiantesArray['']='';
 		foreach ($estudiantes as $estudiante) {

@@ -50,9 +50,9 @@ class Profesor extends Model {
         return $this->belongsTo('App\User');
     }
 
-	public function scopeProfesoresArray($query){
+	public function scopeProfesoresArray($query, $idPrograma){
 
-		$profesores = Profesor::all();
+		$profesores = Profesor::where('programa_id',$idPrograma)->get();
 		$profesoresArray = array();
 		$profesoresArray['']='';
 		foreach ($profesores as $profesor) {
