@@ -55,7 +55,7 @@
                         <a href="{{ url('estado-trabajo-de-grado')}}"><i class='fa fa-user'></i> <span>Estados</span></a>
                     </li>
 
-                    @if ( Auth::user()->type != 'Estudiante' && Auth::user()->type != 'Docente')
+                    @if ( Auth::user()->type != 'Admin' && Auth::user()->type != 'Estudiante' && Auth::user()->type != 'Docente')
                         <li class=''>
                             <a href="{{ url('gestionar/trabajo-de-grado/create')}}"><i class='fa fa-user'></i> <span>Nuevo Trabajo de Grado</span></a>
                         </li>
@@ -75,7 +75,7 @@
                 </ul>
             </li>  
 
-            @if (Auth::user()->type == 'Admin' && Auth::user()->type == 'Decano')
+            @if (Auth::user()->type == 'Admin' || Auth::user()->type == 'Decano')
                 
                 @if (Auth::user()->type == '')
                     <li class=''>

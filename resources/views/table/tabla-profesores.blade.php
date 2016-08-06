@@ -23,8 +23,10 @@
 				<th>Maestria</th>
 				<th>Doctorado</th>
 				<th>Programa</th>
-				<th>Editar</th>
-				<th>Eliminar</th>
+				@if(Auth::user()->type != 'Docente')
+					<th>Editar</th>
+					<th>Eliminar</th>
+				@endif
 		    </tr>
 		    </thead>
 		    <tbody>
@@ -42,14 +44,16 @@
 					<td>{{ $profesor->maestria }}</td>
 					<td>{{ $profesor->doctorado }}</td>
 					<td>{{ $profesor->programa->nombre }}</td>
-		            <td>
-		                <a class='btn btn-success' href="{{ route('gestionar.profesor.edit',$profesor->id) }}">Editar</a>
-		            </td>
-		            <td>
-			            {!! Form::open(['route' => ['gestionar.profesor.destroy', $profesor->id], 'method'=>'DELETE', 'class'=>'', 'id'=>'delete_profesor']) !!}
-			            	<button type="submit" class="btn btn-danger">Eliminar</button>
-		                {!! Form::close() !!}
-		            </td>
+					@if(Auth::user()->type != 'Docente')
+			            <td>
+			                <a class='btn btn-success' href="{{ route('gestionar.profesor.edit',$profesor->id) }}">Editar</a>
+			            </td>
+			            <td>
+				            {!! Form::open(['route' => ['gestionar.profesor.destroy', $profesor->id], 'method'=>'DELETE', 'class'=>'', 'id'=>'delete_profesor']) !!}
+				            	<button type="submit" class="btn btn-danger">Eliminar</button>
+			                {!! Form::close() !!}
+			            </td>
+			        @endif
 				</tr>
 		    @endforeach
 		    </tbody>

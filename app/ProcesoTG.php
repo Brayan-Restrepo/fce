@@ -9,7 +9,7 @@ class ProcesoTG extends Model {
 	 *
 	 * @var string
 	 */
-	protected $table = 'ProcesoTG';
+	protected $table = 'procesoTG';
 
 	/**
 	 * The attributes that are mass assignable.

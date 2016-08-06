@@ -84,7 +84,7 @@
 			@else
 				<div class="well">
 					<span class="label label-success pull-right">
-						{{ $proceso->updated_at }}
+						{{ $proceso->updated_at->format('d/m/Y') }}
 					</span>
 					<p>{{ $proceso->decision }}</p>
 				</div>
